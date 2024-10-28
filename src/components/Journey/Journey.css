@@ -1,0 +1,23 @@
+#Journey-container{
+  height: 100%;
+    direction: rtl;
+    margin: 10rem auto;
+    width: 75%;
+}
+.journeysection {
+    height: 20rem;
+    direction: rtl;
+    margin-top: 10rem;
+  }
+  
+  .milestone{
+      background: var(--gray-4);
+      margin-top: 10rem;
+      width: 30%;
+  }
+  .milestone p {
+    font-size: 35px;
+    text-align: left;
+    direction: ltr;
+
+  }

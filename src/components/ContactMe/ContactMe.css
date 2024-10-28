@@ -1,0 +1,44 @@
+.ContactMe-textarea-input {
+    height: 20rem;
+    width: 20rem;
+}
+
+#ContactMe-socials-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 3rem;
+}
+
+#ContactMe-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-color-light);
+    padding: 5rem;
+    width: 100%;
+}
+
+.ContactMe-subcontainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.social-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: .5rem;
+}
+.ContactMe-text{
+    color: var(--primary-color);
+    font-size: 25px;
+}
+.FontAwesomeIcon{
+    color: var(--primary-color);
+    font-size: 25px;
+}
+.ContactMe-a{
+    text-decoration: none;
+}

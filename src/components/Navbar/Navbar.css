@@ -1,0 +1,44 @@
+#Navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding-right: 2rem;
+    margin-top: 0;
+    justify-content: space-between;
+    background-color: var(--secondary-color-light);
+}
+
+#headshot{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    transform: scaleX(-1);
+    margin-left: 2rem;
+}
+
+.Navbar-a{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 25px;
+    padding: 0 2rem;
+
+}  
+.Navbar-a:hover{
+    color: var(--secondary-color);
+    text-decoration: underline;
+    transition: .35s;
+}  
+
+.Navbar-link-div{
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    margin: 0 2rem;
+    justify-content: right;
+}
+
