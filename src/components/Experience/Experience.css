@@ -49,9 +49,9 @@ a{
     font-size: 20px;
     padding: 5px;
 }
-.CardDiv{
+/* .CardDiv{
     display: grid;
     grid-template-columns: [start] 20rem [line1] 20rem [line2] 20rem [end];
     column-gap: 3rem;
     row-gap: 3rem;
-}
+} */

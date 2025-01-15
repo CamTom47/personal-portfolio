@@ -1,26 +1,37 @@
-:root{
-  --primary-color: hsl(66, 29%, 33%);
-  --primary-color-light: hsl(66, 30%, 64%);
-  --secondary-color: hsl(43, 41%, 69%); 
-  --secondary-color-light: hsl(65, 59%, 91%); 
-  --secondary-color-dark: hsl(42, 26%, 33%); 
-  --black: hsl(0,  0%, 0%);
-  --gray-8: hsl(0, 0%, 20%);
-  --gray-6: hsl(0, 0%, 40%);
-  --gray-4: hsl(0, 0%, 60%);
-  --gray-2: hsl(0, 0%, 80%);
-  --white: hsl(0,  0%, 100%);
-}
-
 html{
   scroll-behavior: smooth;
 }
 
 .App {
   text-align: center;
-  font-family: "Nunito", sans-serif;
   background-color: var(--secondary-color);
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+
+}
+
+.innerDiv{
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.rightSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.leftSection{
+  width: 40%;
+  height: 100vh;
+  overflow-y:visible;
+
 }

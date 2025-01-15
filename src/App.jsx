@@ -1,37 +1,32 @@
+import AboutMe from "./components/AboutMe/AboutMe";
+import Projects from "./components/Projects/Projects";
+import Experience from "./components/Experience/Experience";
+import Navbar from "./components/Navbar/Navbar";
 
-import AboutMe from './components/AboutMe/AboutMe';
-import Projects from './components/Projects/Projects';
-import ContactMe from './components/ContactMe/ContactMe';
-import Experience from './components/Experience/Experience';
-import Resume from './components/Resume/Resume';
-import Navbar from './components/Navbar/Navbar';
-import Journey from './components/Journey/Journey';
-
-import './App.css';
+import "./App.css";
+import Bio from "./components/Bio/Bio";
+import ContactMe from "./components/ContactMe/ContactMe";
 
 function App() {
-  return (
-    <div className="App">
-      <div className="blur-div">
-        <Navbar/>
-        <section id="AboutMeSection">
-          <AboutMe/>
-        </section>
-        <section id="ExperienceSection">
-          <Experience/>
-        </section>
-        <section id="ProjectsSection">
-          <Projects/>
-        </section>
-        {/* <section id="JourneySection">
-          <Journey/>
-        </section> */}
-        <section id="ContactMeSection">
-          <ContactMe/>
-        </section>
-      </div>
-    </div>
-  );
+	return (
+		<div className='flex flex-col bg-sky-300 font-display'>
+			<Navbar />
+			<div className="h-lvh">
+				<div className=' bg-sky-300 flex justify-center'>
+					<Bio />
+				</div>
+				<div className='bg-sky-800'>
+					<Projects />
+				</div>
+				<div className='h-fit bg-sky-300'>
+					<Experience />
+				</div>
+				<div className="h-fit bg-sky-300">
+					<ContactMe/>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default App;

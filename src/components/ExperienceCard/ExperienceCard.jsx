@@ -1,20 +1,23 @@
-import React from 'react';
-import './ExperienceCard.css';
+import React from "react";
+import "./ExperienceCard.css";
+import StackBubble from "../StackBubble/StackBubble";
 
-const ExperienceCard = ({ title, contents }) => {
-  const contentComponents = contents.map((content) => (
-    <div className='contentDiv'>
-      <p>{content}</p>
-    </div>
-  ));
-  return (
-    <div id='ExperienceCard-container'>
-      <div className='titleDiv'>
-        <p>{title}</p>
-      </div>
-      <div className='contentContainer'>{contentComponents}</div>
-    </div>
-  );
+const ExperienceCard = ({ title, contents, images }) => {
+	const contentComponents = contents.map((content, idx) => {
+		const image = images[idx].split(" ").join("");
+		return (
+			<StackBubble image={image} content={content}/>
+		);
+	});
+
+	return (
+		<div className='flex flex-col w-auto text-center h-1/2 bg-sky-400 rounded-xl m-2 p-3'>
+			<p className='text-white text-xl'>{title}</p>
+			{(contents.length > 2 )
+			? <div className='grid grid-cols-2'>{contentComponents}</div>
+			: <div className='grid grid-cols-1'>{contentComponents}</div>}
+		</div>
+	);
 };
 
 export default ExperienceCard;
