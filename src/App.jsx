@@ -9,19 +9,19 @@ import ContactMe from "./components/ContactMe/ContactMe";
 
 function App() {
 	return (
-		<div className='flex flex-col bg-sky-300 font-display'>
+		<div className='flex flex-col bg-sky-300 font-display h-fit'>
 			<Navbar />
-			<div className="h-lvh">
-				<div className=' bg-sky-300 flex justify-center'>
+			<div className="">
+				<div id="AboutMeSection" className=' bg-sky-300 flex justify-center'>
 					<Bio />
 				</div>
-				<div className='bg-sky-800'>
+				<div id="ProjectsSection" className='bg-sky-800'>
 					<Projects />
 				</div>
-				<div className='h-fit bg-sky-300'>
+				<div id="ExperienceSection"  className=' bg-sky-300'>
 					<Experience />
 				</div>
-				<div className="h-fit bg-sky-300">
+				<div id="ContactMeSection" className=" bg-sky-300 flex justify-center">
 					<ContactMe/>
 				</div>
 			</div>

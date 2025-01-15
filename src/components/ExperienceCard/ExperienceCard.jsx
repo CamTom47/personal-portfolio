@@ -11,7 +11,7 @@ const ExperienceCard = ({ title, contents, images }) => {
 	});
 
 	return (
-		<div className='flex flex-col w-auto text-center h-1/2 bg-sky-400 rounded-xl m-2 p-3'>
+		<div className='flex flex-col text-center h-fit bg-sky-400 rounded-xl m-2 p-3'>
 			<p className='text-white text-xl'>{title}</p>
 			{(contents.length > 2 )
 			? <div className='grid grid-cols-2'>{contentComponents}</div>

@@ -38,7 +38,7 @@ const Timeline = () => {
 
 	const timelineComponents = nodeDescriptions.map((node) => {
 		return (
-			<div className='bg-sky-400 rounded-md flex mb-10 gap-x-6 p-6 items-center'>
+			<div className='bg-sky-400 rounded-md flex mb-10 gap-x-6 p-6 items-center '>
 				<p className=''>{node.year}</p>
 				{/* <div className='z-10 bg-sky-300 h-10 w-10 rounded-3xl me-8' /> */}
 				<p className='text-lg'>{node.description}</p>
@@ -47,8 +47,8 @@ const Timeline = () => {
 	});
 
 	return (
-		<div className='bg-sky-800 m-10 text-white text-2xl p-6 rounded-md'>
-			Timeline
+		<div className='bg-sky-800 m-10 text-white text-2xl p-6 rounded-md '>
+			<p className="text-center"> Timeline</p>
 			<div className='my-6'>
 				{/* <div id='nodeLine' className='absolute bg-white h-20 w-1'></div> */}
 				{timelineComponents}
