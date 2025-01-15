@@ -32,7 +32,7 @@ const ContactMe = () => {
 				<a
 					className='text-2xl bg-sky-800 text-white rounded-xl m-5 border border-white hover:bg-white hover:text-sky-800 duration-200'
 					href={require("../../content/Resume.pdf")}
-					target='#'>
+					target='_blank'>
 					Resume
 				</a>
 			</div>

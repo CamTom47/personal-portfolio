@@ -66,13 +66,13 @@ const Experience = () => {
 						<a
 							className='text-lg text-white bg-sky-400 rounded-md m-6'
 							href={require("../../content/SpringboardCertificate.pdf")}
-							target='#'>
+							target='_blank'>
 							Software Engineering Certification
 						</a>
 						<a
 							className='text-lg text-white bg-sky-400 rounded-md m-6'
 							href={require("../../content/AWSCertification.pdf")}
-							target='#'>
+							target='_blank'>
 							AWS Cloud Practitioner Certification
 						</a>
 					</div>
