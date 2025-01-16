@@ -28,7 +28,7 @@ const fitly = {
 const Projects = () => {
 	return (
 		<div className='bg-sky-800 m-10 flex flex-col items-center'>
-			<h1 className='text-white font-bold text-6xl mb-10'>Projects</h1>
+			<h1 className='text-white font-bold text-6xl my-10'>Projects</h1>
 			<div className='flex justify-center'>
 				<ProjectCard
 					name='fitly'
