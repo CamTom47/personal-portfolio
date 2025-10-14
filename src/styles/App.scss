@@ -1,0 +1,10 @@
+@use "theme";
+@font-face {
+  font-family: NotoSans;
+  src: url('../assets/fonts/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf');
+}
+
+.App {
+  // background-color: theme.$background;
+  font-family: NotoSans, sans-serif;
+}

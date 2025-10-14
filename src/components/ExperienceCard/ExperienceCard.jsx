@@ -1,22 +1,44 @@
-import React from "react";
-import "./ExperienceCard.css";
+import "../../styles/components/ExperienceCard.scss";
 import StackBubble from "../StackBubble/StackBubble";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const ExperienceCard = ({ title, contents, images }) => {
 	const contentComponents = contents.map((content, idx) => {
 		const image = images[idx].split(" ").join("");
-		return (
-			<StackBubble image={image} content={content}/>
-		);
+		return <StackBubble image={image} content={content} />;
 	});
 
+	const control = useAnimation();
+	const [ref, inView] = useInView();
+	useEffect(() => {
+		if (inView) {
+			control.start("visible");
+		} else {
+			control.start("hidden");
+		}
+	}, [control, inView]);
+
+	const opacityVariants = {
+		hidden: { opacity: 0, scale: 0 },
+		visible: { opacity: 1, scale: 1, transition: {duration: .5} },
+	};
+
 	return (
-		<div className='flex flex-col text-center h-fit bg-sky-400 rounded-xl m-2 p-3'>
-			<p className='text-white text-xl'>{title}</p>
-			{(contents.length > 2 )
-			? <div className='grid grid-cols-2'>{contentComponents}</div>
-			: <div className='grid grid-cols-1'>{contentComponents}</div>}
-		</div>
+		<motion.div
+			className='ExperienceCard-container'
+			ref={ref}
+			variants={opacityVariants}
+			initial='hidden'
+			animate={control}>
+			<p className='title'>{title}</p>
+			{contents.length > 2 ? (
+				<div className='content'>{contentComponents}</div>
+			) : (
+				<div className='content'>{contentComponents}</div>
+			)}
+		</motion.div>
 	);
 };
 

@@ -1,0 +1,18 @@
+@use '../theme.scss';
+
+.button-primary {
+	color: black;
+	display: flex;
+	background-color: theme.$primary-200;
+	height: fit-content;
+	padding: 1rem 2rem;
+	font-size: 1.6rem;
+	border-radius: 0.4rem;
+    border: none;
+}
+.button-primary:hover {
+    background-color: theme.$background;
+    outline: 1px solid theme.$primary-200;
+	color: theme.$primary-200;
+    transition: .08s;
+}

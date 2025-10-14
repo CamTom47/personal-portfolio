@@ -1,0 +1,19 @@
+@use "../theme.scss";
+
+.StackBubble-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	// grid-template-columns: [start] 1fr [first] 1fr [second] 1fr [end];
+
+	.image {
+		height: 6rem;
+		width: 6rem;
+	}
+
+	.bubble-content {
+		font-size: 1.6rem;
+		margin-bottom: 1.6rem;
+	}
+}

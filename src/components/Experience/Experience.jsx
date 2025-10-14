@@ -1,45 +1,80 @@
-import React from "react";
-import "./Experience.css";
+import "../../styles/components/Experience.scss";
 import $ from "jquery";
 import ExperienceCard from "../ExperienceCard/ExperienceCard";
+import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 import Timeline from "../Timeline/Timeline";
+
+import { useState, useEffect } from "react";
+
+import { useInView } from "react-intersection-observer";
 
 const experiences = [
 	{
-		title: "Devops",
-		contents: ["Git", "Github"],
-		images: ["Git", "Github"],
-	},
-
-	{
-		title: "Client Side",
-		contents: ["React", "Redux"],
-		images: ["React", "Redux"],
-	},
-	{
-		title: "Programming Languages and Frameworks",
+		title: "Languages/Frameworks",
 		contents: ["JavaScript", "TypeScript", "Node.js", "Flask", "Python", "Express"],
 		images: ["JavaScript", "TypeScript", "Node.js", "Flask", "Python", "Express"],
 	},
 	{
-		title: "Integrations",
-		contents: ["Google Maps"],
-		images: ["Google Maps"],
+		title: "Client Side",
+		contents: ["React", "Redux", "Vue"],
+		images: ["React", "Redux", "vue"],
 	},
 	{
-		title: "Styling",
-		contents: ["CSS", "Tailwind", "Bootstrap"],
-		images: ["CSS", "Tailwind", "Bootstrap"],
+		title: "Design",
+		contents: ["CSS", "Tailwind", "Bootstrap", "Sass", "Penpot"],
+		images: ["CSS", "Tailwind", "Bootstrap", "Sass", "Penpot"],
+	},
+	{
+		title: "Data Storage",
+		contents: ["PostgreSQL", "FlaskSQLAlchemy", "SuiteQL"],
+		images: ["PostgreSQL", "FlaskSQLAlchemy", "Oracle"],
+	},
+	{
+		title: "Dev Ops",
+		contents: ["Git", "Github", "Bit Bucket"],
+		images: ["Git", "Github", "BitBucket"],
 	},
 
 	{
-		title: "Data Storage and Caching",
-		contents: ["PostgreSQL", "FlaskSQLAlchemy"],
-		images: ["PostgreSQL", "FlaskSQLAlchemy"],
+		title: "ERP",
+		contents: ["NetSuite"],
+		images: ["Oracle"],
 	},
 ];
 
 const Experience = () => {
+	const [softwareEngineeringExpCurrent, setSoftwareEngineeringExpCurrent] = useState(0);
+	const [softwareEngineeringExpEnd, setSoftwareEngineeringExpEnd] = useState(2);
+	const [professionalExpCurrent, setProfessionalExpCurrent] = useState(0);
+	const [professionalExpEnd, setProfessionalExpEnd] = useState(8);
+	const [ref, inView] = useInView();
+
+	useEffect(() => {
+		let intervalIdSE;
+		let intervalIdPE;
+		const incrementExperienceAmounts = () => {
+			intervalIdSE = setInterval(() => {
+				setSoftwareEngineeringExpCurrent((softwareEngineeringExpCurrent) =>
+					softwareEngineeringExpCurrent < softwareEngineeringExpEnd
+						? (+softwareEngineeringExpCurrent + 0.1).toFixed(1)
+						: +softwareEngineeringExpEnd.toFixed(1)
+				);
+			}, 50);
+			intervalIdPE = setInterval(() => {
+				setProfessionalExpCurrent((professionalExpCurrent) =>
+					professionalExpCurrent < professionalExpEnd
+						? (+professionalExpCurrent + 0.1).toFixed(1)
+						: +professionalExpEnd.toFixed(1)
+				);
+			}, 25);
+		};
+		if(inView) incrementExperienceAmounts();
+		return () => {
+			clearInterval(intervalIdSE);
+			clearInterval(intervalIdPE);
+		}
+	}, [inView]);
+
 	const experienceCardComponents = experiences.map((experience) => (
 		<ExperienceCard title={experience.title} contents={experience.contents} images={experience.images} />
 	));
@@ -47,51 +82,50 @@ const Experience = () => {
 	let $currentDiv = $("");
 
 	return (
-		<div className='flex flex-col'>
-			<div id='Title' className='text-center'>
-				<h1 className='text-sky-800 font-bold text-6xl'> Experience</h1>
-			</div>
-			<div className='flex'>
-				<div className='w-1/2'>
-					<Timeline />
+		<div className='experience-container'>
+			<div id='Title' className='section'>
+				<div className='subsection'>
+					<h1 className='container-header'> Experience</h1>
+					<p className='experience-content'>
+						My experience prior to transitioning into the world of software engineering consists of six years in the
+						construction industry. A majority of it was spent as Senior Project Engineer for a General Contractor and
+						partly as a Draftsperson at an Architectural Firm. While my technical skills continue to grow daily. These
+						previous roles taught me crucial soft skills that when combined with my newfound technical skillset, allow
+						me to create value for others through effective communication, collaboration, and engineering.
+					</p>
+					<p className='experience-content'>
+						My current goal includes learning as much as I can as quick as I can. Sounds lofty? I know, it's great!
+						Since landing my first role as an SE I've been working on multiple personal projects as well. I find that
+						I'm continuously looking to improve my skills in my free time, but my constraint is finding the problems to
+						solve for. That being said, my next big goal to level up is getting into freelancing projects. I look
+						forward to the challenge nad opportunity that awaits.
+					</p>
 				</div>
-				<div className='flex flex-col justify-between w-1/2 me-10 m-10'>
-					<div id='Skills' className='bg-sky-800 p-5 rounded rounded-md'>
-						<h1 className='text-2xl text-white text-center'>Skills</h1>
-						<div className='flex flex-wrap justify-end'>{experienceCardComponents}</div>
+				<div class='subsection center'>
+					<div ref={ref} className='experience-stats-container'>
+						<div className='stat'>
+							<p className='content'>+{softwareEngineeringExpCurrent}</p>
+							<p className='description'>Years of SE Experience</p>
+						</div>
+						<div className='stat'>
+							<p className='content'>+{professionalExpCurrent}</p>
+							<p className='description'>Years of Professional Experience</p>
+						</div>
 					</div>
+					<div className='button-container'>
+						<ButtonPrimary
+							content={"Software Engineering Certification"}
+							url={"../../../content/SpringboardCertificate.pdf"}></ButtonPrimary>
+						<ButtonPrimary
+							content={"AWS Cloud Practitioner Certification"}
+							url={"../../../content/AWSCertification.pdf"}></ButtonPrimary>
+					</div>
+				</div>
+			</div>
 
-					<div className='bg-sky-800 rounded-md p-5 text-center'>
-						<h1 className='text-2xl text-white mb-6'>Certifications</h1>
-						<a
-							className='text-lg text-white bg-sky-400 rounded-md m-6'
-							href={require("../../content/SpringboardCertificate.pdf")}
-							target="_blank">
-							Software Engineering Certification
-						</a>
-						<a
-							className='text-lg text-white bg-sky-400 rounded-md m-6'
-							href={require("../../content/AWSCertification.pdf")}
-							target="_blank">
-							AWS Cloud Practitioner Certification
-						</a>
-					</div>
-					<div id='Education' className='p-5 bg-sky-800 rounded rounded-md text-center'>
-						<h1 className='text-2xl text-white'>Education</h1>
-						<ul className='mt-4 text-white'>
-							<div className='bg-sky-400 rounded rounded-md mb-5 me-2 p-5 text-lg'>
-								<li>Springboard</li>
-								<p>Oct 2023 - Oct 2024</p>
-								<p>Sotware Engineering Certificate</p>
-							</div>
-							<div className='bg-sky-400 rounded rounded-md mb-5 me-2 p-5 text-lg'>
-								<li>Purdue University</li>
-								<p>August 2014 - Oct 2018</p>
-								<p>Bachelor Of Science</p>
-								<p>Construction Managment</p>
-							</div>
-						</ul>
-					</div>
+			<div className=''>
+				<div className=''>
+					<div className='experiences'>{experienceCardComponents}</div>
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,148 @@
+@use "../theme.scss";
+
+@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop) {
+	.Navbar-container {
+		box-sizing: border-box;
+		display: flex;
+		justify-content: space-between;
+		position: sticky;
+		top: 0;
+		align-items: center;
+		width: 100%;
+		height: 7.2rem;
+		padding: 1.6rem 12rem;
+		background-color: theme.$background;
+		z-index: 9999;
+		border-bottom: 1px solid theme.$primary-100;
+	}
+
+	.Navbar-link {
+		text-decoration: none;
+		font-size: 2.0rem;
+		color: theme.$primary-200;
+		font-weight: 600;
+	}
+	.Navbar-link:hover {
+		color: theme.$primary-100;
+		transition: 0.1s;
+	}
+
+	.Navbar-link-div {
+		display: flex;
+		width: 50%;
+		flex-direction: row;
+		margin: 0 2rem;
+		justify-content: right;
+	}
+
+	.icon-container {
+		color: theme.$primary-200;
+	}
+	.nav-icon {
+		height: 20rem;
+		margin-right: 2.4rem;
+		color: theme.$primary-200;
+	}
+	.nav-icon:hover {
+		height: 20rem;
+		color: theme.$primary-100;
+		transition: 0.1s;
+	}
+	.links {
+		display: flex;
+		align-items: baseline;
+		column-gap: 2.4rem;
+	}
+}
+
+@media (min-width: theme.$breakpoint-laptop) {
+	.Navbar-link {
+		text-decoration: none;
+		font-size: 1.6rem;
+		color: theme.$primary-200;
+		font-weight: 600;
+	}
+	.Navbar-link:hover {
+		color: theme.$primary-100;
+		transition: 0.1s;
+	}
+
+	.Navbar-link-div {
+		display: flex;
+		width: 50%;
+		flex-direction: row;
+		margin: 0 2rem;
+		justify-content: right;
+	}
+
+	.icon-container {
+		color: theme.$primary-200;
+	}
+	.nav-icon {
+		height: 20rem;
+		margin-right: 2.4rem;
+		color: theme.$primary-200;
+	}
+	.nav-icon:hover {
+		height: 20rem;
+		color: theme.$primary-100;
+		transition: 0.1s;
+	}
+	.links {
+		display: flex;
+		align-items: baseline;
+		column-gap: 2.4rem;
+	}
+	.Navbar-container {
+		box-sizing: border-box;
+		display: flex;
+		justify-content: space-between;
+		position: sticky;
+		top: 0;
+		align-items: center;
+		width: 100%;
+		height: 7.2rem;
+		padding: 1.6rem 12rem;
+		background-color: theme.$background;
+		z-index: 9999;
+		border-bottom: 1px solid theme.$primary-100;
+	}
+
+	.Navbar-link {
+		text-decoration: none;
+		font-size: 1.6rem;
+		color: theme.$primary-200;
+		font-weight: 600;
+	}
+	.Navbar-link:hover {
+		color: theme.$primary-100;
+		transition: 0.1s;
+	}
+
+	.Navbar-link-div {
+		display: flex;
+		width: 50%;
+		flex-direction: row;
+		margin: 0 2rem;
+		justify-content: right;
+	}
+
+	.icon-container {
+		color: theme.$primary-200;
+	}
+	.nav-icon {
+		height: 20rem;
+		margin-right: 2.4rem;
+		color: theme.$primary-200;
+	}
+	.nav-icon:hover {
+		height: 20rem;
+		color: theme.$primary-100;
+		transition: 0.1s;
+	}
+	.links {
+		display: flex;
+		align-items: baseline;
+		column-gap: 2.4rem;
+	}
+}

@@ -1,0 +1,20 @@
+@use '../theme.scss';
+
+.ContactMe-container{
+    background-color: theme.$background;
+    padding: 12rem
+}
+
+.icon-container {
+	color: theme.$primary-300;
+}
+.icon {
+	height: 20rem;
+	margin-right: 2.4rem;
+	color: theme.$primary-200;
+}
+.icon:hover {
+	height: 20rem;
+	color: theme.$primary-100;
+	transition: 0.1s;
+}

@@ -1,0 +1,99 @@
+@use "../theme";
+
+@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop) {
+	.AboutMe-container {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		height: fit-content;
+		padding: 4rem 1rem;
+		position: relative;
+		background-image: linear-gradient(70deg, rgb(247, 247, 247) 50%, rgb(221, 221, 221) 90%);
+		border-bottom: 1px solid theme.$primary-100;
+
+		.content-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			width: 55%;
+			z-index: 1;
+		}
+		.header-content {
+			font-size: 7.2rem;
+			color: theme.$primary-200;
+			font-weight: 400;
+			vertical-align: bottom;
+		}
+		.subheader-content {
+			font-size: 3.6rem;
+			color: darkgray;
+			font-weight: 400;
+		}
+		.descriptor {
+			font-size: 4.8rem;
+			color: theme.$primary-200;
+			font-weight: 300;
+		}
+		.aboutme-content {
+			font-size: 2rem;
+			color: black;
+			font-weight: 300;
+			margin-bottom: 4rem;
+		}
+	}
+
+	.headshot {
+	}
+}
+
+@media (min-width: theme.$breakpoint-laptop) {
+	.AboutMe-container {
+		box-sizing: border-box;
+		display: flex;
+		height: 100vh;
+		padding: 4rem 12rem;
+		position: relative;
+		background-image: linear-gradient(70deg, rgb(247, 247, 247) 50%, rgb(221, 221, 221) 90%);
+		border-bottom: 1px solid theme.$primary-100;
+
+		.content-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			width: 55%;
+			z-index: 1;
+		}
+		.header-content {
+			font-size: 7.2rem;
+			color: theme.$primary-200;
+			font-weight: 400;
+			vertical-align: bottom;
+		}
+		.subheader-content {
+			font-size: 3.6rem;
+			color: darkgray;
+			font-weight: 400;
+		}
+		.descriptor {
+			font-size: 4.8rem;
+			color: theme.$primary-200;
+			font-weight: 300;
+		}
+		.aboutme-content {
+			font-size: 2rem;
+			color: black;
+			font-weight: 300;
+			margin-bottom: 4rem;
+		}
+	}
+
+	.headshot {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: auto;
+		border: 2px solid var(--primary-color);
+		z-index: 0;
+	}
+}

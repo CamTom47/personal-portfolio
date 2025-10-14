@@ -1,30 +1,18 @@
-import AboutMe from "./components/AboutMe/AboutMe";
-import Projects from "./components/Projects/Projects";
-import Experience from "./components/Experience/Experience";
 import Navbar from "./components/Navbar/Navbar";
+import { Routes, Route } from 'react-router'
+import Homepage from "./pages/Homepage";
+import PortfolioPage from "./pages/PortfolioPage";
 
-import "./App.css";
-import Bio from "./components/Bio/Bio";
-import ContactMe from "./components/ContactMe/ContactMe";
+import './styles/App.scss';
 
 function App() {
 	return (
-		<div className='flex flex-col bg-sky-300 font-display h-fit'>
+		<div className="App">
 			<Navbar />
-			<div className="">
-				<div id="AboutMeSection" className=' bg-sky-300 flex justify-center'>
-					<Bio />
-				</div>
-				<div id="ProjectsSection" className='bg-sky-800'>
-					<Projects />
-				</div>
-				<div id="ExperienceSection"  className=' bg-sky-300'>
-					<Experience />
-				</div>
-				<div id="ContactMeSection" className=" bg-sky-300 flex justify-center">
-					<ContactMe/>
-				</div>
-			</div>
+			<Routes>
+				<Route path='/' element={<Homepage/>}></Route>
+				<Route path='/portfolio' element={<PortfolioPage/>}></Route>
+			</Routes>
 		</div>
 	);
 }

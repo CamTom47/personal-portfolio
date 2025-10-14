@@ -1,0 +1,65 @@
+@use "../theme.scss";
+.timeline-container {
+	box-sizing: border-box;
+	background-color: theme.$primary-200;
+	padding: 12rem 12rem;
+	height: fit-content;
+
+}
+
+.timelines-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 3.2rem;
+	overflow-y: scroll;
+	scrollbar-width: none;
+	height: 40rem;
+	border: 1px solid theme.$background;
+	border-radius: 2rem;
+	padding: 2rem;
+
+	background-color: theme.$background;
+    
+}
+.timeline-container-header{
+	font-size: 7.2rem;
+	color: theme.$background;
+	margin-bottom: 4rem;
+}
+.header-row{
+	display: flex;
+	align-items: baseline;
+	column-gap: 4rem;
+}
+.header-description{
+	font-size: 1.6rem;
+	font-weight: 600;
+
+}
+
+.timeline {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	background-color: theme.$primary-200;
+	border-radius: 0.8rem;
+		padding: 2rem;
+	box-shadow: 0 0.5rem 1rem 0.1rem black;
+}
+
+.timeline-year {
+	font-size: 2rem;
+	color: black;
+	font-weight: 500;
+	margin-bottom: 1rem;
+}
+.timeline-description {
+	font-size: 1.6rem;
+	color: theme.$background;
+}
+.scroll-progress-bar{
+    margin-bottom: 2rem;
+    background-color: theme.$background;
+    height: 2rem;
+    border-radius: 1rem;
+}
