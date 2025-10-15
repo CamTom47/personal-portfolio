@@ -9,19 +9,75 @@
 		top: 0;
 		align-items: center;
 		width: 100%;
-		height: 7.2rem;
-		padding: 1.6rem 12rem;
+		height: fit-content;
+		padding: 1.6rem 1rem;
 		background-color: theme.$background;
 		z-index: 9999;
 		border-bottom: 1px solid theme.$primary-100;
 	}
+	.hidden {
+		visibility: hidden;
+	}
+	.container-right {
+		position: relative;
+		height: 100%;
+		width: fit-content;
+	}
+	.hamburger {
+		// right: 1rem;
+		// position: absolute;
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.5rem;
+		width: 3.2rem;
+
+		&:hover {
+			.bar {
+				height: 0.5rem;
+				border-radius: 0.2rem;
+				background-color: theme.$primary-100;
+			}
+		}
+	}
+	.bar {
+		height: 0.5rem;
+		border-radius: 0.2rem;
+		background-color: theme.$primary-200;
+	}
+
+	.dropdown-menu {
+		opacity: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: theme.$background;
+		position: absolute;
+		width: 100vw;
+		left: 0;
+		top: 6.2rem;
+		height: fit-content;
+		border-top: 1px solid theme.$primary-100;
+		z-index: 0;
+		transition: all 300ms;
+
+		&.active {
+			opacity: 1;
+			left: 0;
+			transition: all 300ms;
+		}
+	}
 
 	.Navbar-link {
 		text-decoration: none;
-		font-size: 2.0rem;
+		text-align: center;
+		font-size: 2rem;
 		color: theme.$primary-200;
-		font-weight: 600;
+		font-weight: 400;
+		padding: 1rem 2rem;
+		border-bottom: 1px solid theme.$primary-100;
+		width: 100%;
 	}
+
 	.Navbar-link:hover {
 		color: theme.$primary-100;
 		transition: 0.1s;
@@ -36,6 +92,9 @@
 	}
 
 	.icon-container {
+		display: flex;
+		align-items: baseline;
+		height: 3rem;
 		color: theme.$primary-200;
 	}
 	.nav-icon {

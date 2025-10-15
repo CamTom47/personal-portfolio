@@ -52,9 +52,9 @@ const Timeline = () => {
 	const timelineRef = useRef(null);
 	const { scrollYProgress } = useScroll({ container: timelineRef });
 
-	const timelineComponents = nodeDescriptions.map((node) => {
+	const timelineComponents = nodeDescriptions.map((node, idx) => {
 		return (
-			<div className='timeline'>
+			<div className='timeline' key={idx}>
 				<p className='timeline-year'>{node.year}</p>
 				<p className='timeline-description'>{node.description}</p>
 			</div>

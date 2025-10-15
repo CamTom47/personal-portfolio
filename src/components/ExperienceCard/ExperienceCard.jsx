@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const ExperienceCard = ({ title, contents, images }) => {
 	const contentComponents = contents.map((content, idx) => {
 		const image = images[idx].split(" ").join("");
-		return <StackBubble image={image} content={content} />;
+		return <StackBubble key={idx} image={image} content={content} />;
 	});
 
 	const control = useAnimation();

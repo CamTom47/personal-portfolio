@@ -75,8 +75,8 @@ const Experience = () => {
 		}
 	}, [inView]);
 
-	const experienceCardComponents = experiences.map((experience) => (
-		<ExperienceCard title={experience.title} contents={experience.contents} images={experience.images} />
+	const experienceCardComponents = experiences.map((experience, idx) => (
+		<ExperienceCard key={idx} title={experience.title} contents={experience.contents} images={experience.images} />
 	));
 
 	let $currentDiv = $("");
@@ -101,7 +101,7 @@ const Experience = () => {
 						forward to the challenge nad opportunity that awaits.
 					</p>
 				</div>
-				<div class='subsection center'>
+				<div className='subsection center'>
 					<div ref={ref} className='experience-stats-container'>
 						<div className='stat'>
 							<p className='content'>+{softwareEngineeringExpCurrent}</p>
