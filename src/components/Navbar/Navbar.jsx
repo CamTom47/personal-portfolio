@@ -2,7 +2,7 @@ import "../../styles/components/Navbar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const Navbar = () => {
 	const [showHamburgerMenu, setShowHamburgerMenu] = useState(false); //Boolean that switches from links to a hamburger menu in mobile mode
@@ -14,12 +14,13 @@ const Navbar = () => {
 		toggleMenuOpen((menuOpen) => !menuOpen);
 	};
 
+	// Sets the screen width state
+	const adjustScreenWidth = useCallback(() => {
+		setScreenWidth(window.outerWidth);
+	});
+
 	//if the user adjusts their screen width, fire adjustScreenWidth to update state accordingly.
 	useEffect(() => {
-		// Sets the screen width state
-		const adjustScreenWidth = () => {
-			setScreenWidth(window.outerWidth);
-		};
 		window.addEventListener("resize", adjustScreenWidth);
 		return () => window.removeEventListener("resize", adjustScreenWidth);
 	}, [adjustScreenWidth]);
