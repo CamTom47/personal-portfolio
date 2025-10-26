@@ -2,8 +2,6 @@ import React from "react";
 import '../../styles/components/ButtonPrimary.scss'
 
 const ButtonPrimary = ({ content, url }) => {
-	const buttonHref = React.lazy(() => import(url));
-
 	const onButtonClick = () => {
 		const pdfUrl = url;
 		const link = document.createElement("a");

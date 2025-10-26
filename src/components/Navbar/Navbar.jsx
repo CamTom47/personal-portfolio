@@ -14,13 +14,12 @@ const Navbar = () => {
 		toggleMenuOpen((menuOpen) => !menuOpen);
 	};
 
-	// Sets the screen width state
-	const adjustScreenWidth = () => {
-		setScreenWidth(window.outerWidth);
-	};
-
 	//if the user adjusts their screen width, fire adjustScreenWidth to update state accordingly.
 	useEffect(() => {
+		// Sets the screen width state
+		const adjustScreenWidth = () => {
+			setScreenWidth(window.outerWidth);
+		};
 		window.addEventListener("resize", adjustScreenWidth);
 		return () => window.removeEventListener("resize", adjustScreenWidth);
 	}, [adjustScreenWidth]);
@@ -35,11 +34,15 @@ const Navbar = () => {
 	return (
 		<div className='Navbar-container'>
 			<div className='icon-container'>
-				<a className='nav-icon fa-3x' target='_blank' href='https://github.com/CamTom47'>
+				<a className='nav-icon fa-3x' target='_blank' rel='noopener noreferrer' href='https://github.com/CamTom47'>
 					<FontAwesomeIcon icon={faGithub} />
 				</a>
 
-				<a className='nav-icon fa-3x' target='_blank' href='https://www.linkedin.com/in/cameron-mi-thomas'>
+				<a
+					className='nav-icon fa-3x'
+					target='_blank'
+					rel='noopener noreferrer'
+					href='https://www.linkedin.com/in/cameron-mi-thomas'>
 					<FontAwesomeIcon icon={faLinkedin} />
 				</a>
 
@@ -63,14 +66,14 @@ const Navbar = () => {
 					<div id='bar3' className='bar'></div>
 				</div>
 			)}
-			<div className={menuOpen ? 'dropdown-menu active' : 'dropdown-menu hidden' }>
-					{/* <a className='Navbar-link' href=''>
+			<div className={menuOpen ? "dropdown-menu active" : "dropdown-menu hidden"}>
+				{/* <a className='Navbar-link' href=''>
 						About
 					</a>
 					<a className='Navbar-link' href=''>
 						Portfolio
 					</a> */}
-				</div>
+			</div>
 		</div>
 	);
 };

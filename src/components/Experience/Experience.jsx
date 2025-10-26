@@ -44,10 +44,10 @@ const experiences = [
 
 const Experience = () => {
 	const [softwareEngineeringExpCurrent, setSoftwareEngineeringExpCurrent] = useState(0);
-	const [softwareEngineeringExpEnd, setSoftwareEngineeringExpEnd] = useState(2);
 	const [professionalExpCurrent, setProfessionalExpCurrent] = useState(0);
-	const [professionalExpEnd, setProfessionalExpEnd] = useState(8);
 	const [ref, inView] = useInView();
+	const professionalExpEnd = 8;
+	const softwareEngineeringExpEnd = 2;
 
 	useEffect(() => {
 		let intervalIdSE;
@@ -78,8 +78,6 @@ const Experience = () => {
 	const experienceCardComponents = experiences.map((experience, idx) => (
 		<ExperienceCard key={idx} title={experience.title} contents={experience.contents} images={experience.images} />
 	));
-
-	let $currentDiv = $("");
 
 	return (
 		<div className='experience-container'>

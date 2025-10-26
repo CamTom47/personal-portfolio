@@ -8,11 +8,11 @@ const ContactMe = () => {
 		<div className='ContactMe-container'>
 			<h1 className='container-header'>Contact Me</h1>
 			<div className='icon-container'>
-				<a className='icon fa-3x' target='_blank' href='https://github.com/CamTom47'>
+				<a className='icon fa-3x' target='_self' rel='noopener noreferrer' href='https://github.com/CamTom47'>
 					<FontAwesomeIcon icon={faGithub} />
 				</a>
 
-				<a className='icon fa-3x' target='_blank' href='https://www.linkedin.com/in/cameron-mi-thomas'>
+				<a className='icon fa-3x' target='_self' rel='noopener noreferrer' href='https://www.linkedin.com/in/cameron-mi-thomas'>
 					<FontAwesomeIcon icon={faLinkedin} />
 				</a>
 

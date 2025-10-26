@@ -9,7 +9,7 @@ const ProjectCard = ({ link, name, imageSrc, description, stack }) => {
 		<div className='flex flex-col items-center m-10 border border-white rounded-xl p-10 bg-sky-400 gap-y-10'>
 			<p className='z-10 text-white text-5xl'>{name}</p>
 			<div>
-					<img className='bg-clip-border max-h-80' src={require(`../../assets/images/${imageSrc}`)}></img>
+					<img className='bg-clip-border max-h-80' src={require(`../../assets/images/${imageSrc}`)} alt={`${name} icon`}></img>
 			</div>
 			<div>
 				<p className='text-white text-xl'>{description}</p>
