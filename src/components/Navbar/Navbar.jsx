@@ -17,7 +17,7 @@ const Navbar = () => {
 	// Sets the screen width state
 	const adjustScreenWidth = useCallback(() => {
 		setScreenWidth(window.outerWidth);
-	});
+	}, []);
 
 	//if the user adjusts their screen width, fire adjustScreenWidth to update state accordingly.
 	useEffect(() => {
