@@ -1,10 +1,11 @@
 @use "../theme";
 
-@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop) {
+@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop){
 	.AboutMe-container {
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		height: fit-content;
 		padding: 4rem 1rem;
 		position: relative;
@@ -14,20 +15,28 @@
 		.content-container {
 			display: flex;
 			flex-direction: column;
-			justify-content: space-evenly;
-			width: 55%;
+			justify-content: center;
+			text-align: center;
 			z-index: 1;
+			row-gap: 4rem;
+
+			div{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
 		}
 		.header-content {
-			font-size: 7.2rem;
+			font-size: 3.6rem;
 			color: theme.$primary-200;
 			font-weight: 400;
 			vertical-align: bottom;
 		}
 		.subheader-content {
-			font-size: 3.6rem;
+			font-size: 2.8rem;
 			color: darkgray;
 			font-weight: 400;
+			margin-bottom: 32rem;
 		}
 		.descriptor {
 			font-size: 4.8rem;
@@ -38,11 +47,15 @@
 			font-size: 2rem;
 			color: black;
 			font-weight: 300;
-			margin-bottom: 4rem;
+			margin-bottom: 2rem;
 		}
 	}
 
 	.headshot {
+		position: absolute;
+		width: 100vw;
+		height: auto;
+		top: 10.8rem;
 	}
 }
 
@@ -84,6 +97,10 @@
 			color: black;
 			font-weight: 300;
 			margin-bottom: 4rem;
+		}
+
+		.button-container{
+			width: 40%;
 		}
 	}
 

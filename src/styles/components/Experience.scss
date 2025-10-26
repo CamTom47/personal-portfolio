@@ -1,122 +1,229 @@
 @use "../../styles//theme.scss";
-.experience-container {
-	display: flex;
-	background-color: theme.$background;
-	box-sizing: border-box;
-	flex-direction: column;
-	row-gap: 12rem;
-	height: fit-content;
-	padding: 12rem 12rem;
-	border-bottom: 1px solid theme.$primary-200;
-}
-.section {
-	display: flex;
-	justify-content: space-between;
-	height: fit-content;
-	column-gap: 12rem;
-}
-.subsection {
-	display: flex;
-	flex-direction: column;
-	row-gap: 3.2rem;
-	width: 50%;
 
-	&.center {
+@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop) {
+	.experience-container {
+		display: flex;
+		background-color: theme.$background;
+		box-sizing: border-box;
 		flex-direction: column;
-		align-items: center;
-		justify-content: end;
-		row-gap: 6.4rem;
+		row-gap: 12rem;
+		height: fit-content;
+		padding: 4rem 1rem;
+		border-bottom: 1px solid theme.$primary-200;
 	}
-}
-.button-container {
-	display: flex;
-	column-gap: 1.2rem;
-	align-items: center;
-}
-.experience-content {
-	font-size: 1.6rem;
-}
-.container-header {
-	font-size: 7.2rem;
-	color: theme.$primary-200;
-	font-weight: 400;
-	vertical-align: center;
-}
-.experience-stats-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-		row-gap: 3.2rem;
-
-	.stat {
+	.section {
 		display: flex;
 		flex-direction: column;
-		text-align: center;
 		justify-content: space-between;
-		align-items: center;
+		height: fit-content;
+		column-gap: 12rem;
+	}
+	.subsection {
+		display: flex;
+		flex-direction: column;
+		row-gap: 3.2rem;
 
-		.content {
-			display: flex;
-			text-align: center;
-			justify-content: center;
-			color: theme.$primary-200;
-			font-weight: 400;
-			font-size: 4rem;
+		&.center {
+			flex-direction: column;
+			align-items: center;
+			justify-content: end;
+			row-gap: 6.4rem;
 		}
-		.description {
+	}
+	.button-container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 2rem;
+		width: 100%;
+	}
+	.experience-content {
+		font-size: 1.6rem;
+	}
+	.container-header {
+		font-size: 3.6rem;
+		color: theme.$primary-200;
+		font-weight: 400;
+		vertical-align: center;
+	}
+	.experience-stats-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		row-gap: 3.2rem;
+
+		.stat {
 			display: flex;
 			flex-direction: column;
-			color: darkgray;
-			font-size: 2.4rem;
-			font-weight: 400;
-			width: 80%;
+			text-align: center;
+			justify-content: space-between;
+			align-items: center;
+
+			.content {
+				display: flex;
+				text-align: center;
+				justify-content: center;
+				color: theme.$primary-200;
+				font-weight: 400;
+				font-size: 4rem;
+			}
+			.description {
+				display: flex;
+				flex-direction: column;
+				color: darkgray;
+				font-size: 2.4rem;
+				font-weight: 400;
+				width: 80%;
+			}
 		}
+	}
+
+	.experiences {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		row-gap: 4rem;
+		column-gap: 4rem;
+		text-align: center;
+	}
+	.container-subheader {
+		color: theme.$primary-200;
+		font-size: 4.8rem;
+		font-weight: 400;
+		text-decoration: underline;
+		text-decoration-color: theme.$primary-200;
+		text-decoration-line: solid;
+		text-decoration-thickness: 0.2rem;
+		text-underline-offset: 0.6rem;
+	}
+
+	.education-section {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1.2rem;
+		margin-top: 12rem;
+	}
+	.education-header {
+		font-size: 2.4em;
+		color: theme.$primary-200;
+		font-weight: 400;
+		padding: 0;
+
+		margin-bottom: 0.4rem;
+	}
+	.education-row {
+		display: flex;
+		align-items: baseline;
+		column-gap: 2rem;
+	}
+	.education-date {
+		font-size: 1.6rem;
+		padding: 0;
+	}
+	.education-credential {
+		padding-left: 2rem;
+		font-size: 1.6rem;
 	}
 }
 
-.experiences {
-	box-sizing: border-box;
-	display: grid;
-	grid-template-columns: [start] 1fr [first] 1fr [second] 1fr [end];
-	row-gap: 4rem;
-	column-gap: 4rem;
-	text-align: center;
-}
-.container-subheader {
-	color: theme.$primary-200;
-	font-size: 4.8rem;
-	font-weight: 400;
-	text-decoration: underline;
-	text-decoration-color: theme.$primary-200;
-	text-decoration-line: solid;
-	text-decoration-thickness: 0.2rem;
-	text-underline-offset: 0.6rem;
-}
+@media (min-width: theme.$breakpoint-laptop) {
+	.experience-container {
+		display: flex;
+		background-color: theme.$background;
+		box-sizing: border-box;
+		flex-direction: column;
+		row-gap: 8rem;
+		height: fit-content;
+		padding: 12rem 12rem;
+		border-bottom: 1px solid theme.$primary-200;
+	}
+	.section {
+		display: flex;
+		justify-content: space-between;
+		height: fit-content;
+		column-gap: 12rem;
+	}
+	.subsection {
+		display: flex;
+		flex-direction: column;
+		row-gap: 2.8rem;
+		width: 50%;
 
-.education-section {
-	display: flex;
-	flex-direction: column;
-	row-gap: 1.2rem;
-	margin-top: 12rem;
-}
-.education-header {
-	font-size: 2.4em;
-	color: theme.$primary-200;
-	font-weight: 400;
-	padding: 0;
+		h2 {
+			color: theme.$primary-200;
+			font-size: 2.4rem;
+		}
 
-	margin-bottom: 0.4rem;
-}
-.education-row {
-	display: flex;
-	align-items: baseline;
-	column-gap: 2rem;
-}
-.education-date {
-	font-size: 1.6rem;
-	padding: 0;
-}
-.education-credential {
-	padding-left: 2rem;
-	font-size: 1.6rem;
+		&.center {
+			flex-direction: column;
+			align-items: center;
+			justify-content: end;
+			row-gap: 6.4rem;
+		}
+	}
+	.button-container {
+		display: flex;
+		flex-direction: column;
+		column-gap: 1.2rem;
+		align-items: start;
+		row-gap: 2rem;
+		width: 60%;
+	}
+	.experience-content {
+		font-size: 1.6rem;
+	}
+	.container-header {
+		font-size: 7.2rem;
+		color: theme.$primary-200;
+		font-weight: 400;
+		vertical-align: center;
+	}
+	.experience-stats-container {
+		display: flex;
+		justify-content: space-between;
+		row-gap: 3.2rem;
+
+		.stat {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			justify-content: space-between;
+			align-items: center;
+
+			.content {
+				display: flex;
+				text-align: center;
+				justify-content: center;
+				color: theme.$primary-200;
+				font-weight: 400;
+				font-size: 4rem;
+			}
+			.description {
+				display: flex;
+				flex-direction: column;
+				color: darkgray;
+				font-size: 2.4rem;
+				font-weight: 400;
+				width: 80%;
+			}
+		}
+	}
+
+	.experiences {
+		box-sizing: border-box;
+		display: grid;
+		grid-template-columns: [start] 1fr [first] 1fr [second] 1fr [end];
+		row-gap: 4rem;
+		column-gap: 4rem;
+		text-align: center;
+	}
+	.container-subheader {
+		color: theme.$primary-200;
+		font-size: 4.8rem;
+		font-weight: 400;
+		text-decoration: underline;
+		text-decoration-color: theme.$primary-200;
+		text-decoration-line: solid;
+		text-decoration-thickness: 0.2rem;
+		text-underline-offset: 0.6rem;
+	}
 }

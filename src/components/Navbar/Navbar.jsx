@@ -27,7 +27,7 @@ const Navbar = () => {
 
 	//
 	useEffect(() => {
-		if (screenWidth <= 430) {
+		if (screenWidth <= 992) {
 			setShowHamburgerMenu(true);
 		} else setShowHamburgerMenu(false);
 	}, [screenWidth]);
@@ -49,12 +49,12 @@ const Navbar = () => {
 			</div>
 			{!showHamburgerMenu ? (
 				<div className='links'>
-					<a className='Navbar-link' href='#AboutMeSection'>
+					{/* <a className='Navbar-link' href='/'>
 						About
 					</a>
-					<a className='Navbar-link' href='#ProjectsSection'>
+					<a className='Navbar-link' href='/projects'>
 						Portfolio
-					</a>
+					</a> */}
 				</div>
 			) : (
 				<div className={showHamburgerMenu ? "hamburger" : "hidden"} onClick={handleMenuToggle}>
@@ -62,15 +62,14 @@ const Navbar = () => {
 					<div id='bar2' className='bar'></div>
 					<div id='bar3' className='bar'></div>
 				</div>
-				
 			)}
-			<div className={menuOpen ? 'dropdown-menu active' : 'dropdown-menu' }>
-					<a className='Navbar-link' href=''>
+			<div className={menuOpen ? 'dropdown-menu active' : 'dropdown-menu hidden' }>
+					{/* <a className='Navbar-link' href=''>
 						About
 					</a>
 					<a className='Navbar-link' href=''>
 						Portfolio
-					</a>
+					</a> */}
 				</div>
 		</div>
 	);

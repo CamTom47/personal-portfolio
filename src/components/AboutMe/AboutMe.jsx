@@ -11,7 +11,9 @@ const AboutMe = () => {
 				</div>
 				<div>
 					<p className='aboutme-content'>A curious Software Engineer with a passion for continuous improvement and a firm believer that there is no problem that cannot be solved given enough time, effort, and attention.</p>
-					<ButtonPrimary content={"Download Resume"} url={"../../../public/content/Resume.pdf"}></ButtonPrimary>
+					<div className="button-container">
+						<ButtonPrimary content={"Download Resume"} url={"../../../public/content/Resume.pdf"}></ButtonPrimary>
+						</div>
 				</div>
 			</div>
 			<img className='headshot' src={require("../../assets/images/headshot.jpg")} alt='' />

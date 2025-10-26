@@ -1,18 +1,17 @@
+import { useState } from "react";
 import "../../styles/components/Timeline.scss";
-import { motion, useScroll } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
 
 const Timeline = () => {
+	const [activeIdx, setActiveIdx] = useState(0);
 	const nodeDescriptions = [
 		{
 			year: "May 2018",
 			description:
-				"Graduated from Purdue Univesity with a degree in Construction Management and moved to Seattle Washington to work for DPR Construction, as Project Engineer",
+				"Graduated from Purdue Univesity with a degree in Construction Management and moved to Seattle Washington to work for DPR Construction, as a Project Engineer",
 		},
 		{
 			year: "August 2022",
-			description: "Moved to Indiana and joined an SDG as draftsperson/designer",
+			description: "Moved to Indiana and joined an SDG as Draftsperson/Designer",
 		},
 		{
 			year: "October 2023",
@@ -49,28 +48,42 @@ const Timeline = () => {
 		},
 	];
 
-	const timelineRef = useRef(null);
-	const { scrollYProgress } = useScroll({ container: timelineRef });
+	const incrementActiveTimeline = (value) => {
+		console.log(value);
+		if (value === -1 && activeIdx === 0) return;
+		else if (value === 1 && activeIdx === nodeDescriptions.length - 1) return;
+		else {
+			setActiveIdx(activeIdx + value);
+		}
+	};
 
 	const timelineComponents = nodeDescriptions.map((node, idx) => {
 		return (
-			<div className='timeline' key={idx}>
-				<p className='timeline-year'>{node.year}</p>
+			<div className={`timeline ${activeIdx !== idx ? "hidden" : ""}`} key={idx}>
+				<div className='timeline-header-background'>
+					<p className='timeline-year'>{node.year}</p>
+				</div>
 				<p className='timeline-description'>{node.description}</p>
+				<div className='timeline-navigator'>
+					<div className='arrow-background left' onClick={() => incrementActiveTimeline(-1)}>
+						<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+							<path fill='currentColor' d='m14 18l-6-6l6-6l1.4 1.4l-4.6 4.6l4.6 4.6z' />
+						</svg>
+					</div>
+					<div className='arrow-background right' onClick={() => incrementActiveTimeline(1)}>
+						<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+							<path fill='currentColor' d='M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z' />
+						</svg>
+					</div>
+				</div>
 			</div>
 		);
 	});
 
 	return (
-		<div className='timeline-container'>
-			<div className="header-row">
-				<p className='timeline-container-header'> Timeline</p>
-				<p className="header-description">My professional journey after graduating from Purdue University</p>
-			</div>
-			<motion.div className='scroll-progress-bar' style={{ scaleX: scrollYProgress }}></motion.div>
-			<div ref={timelineRef} className='timelines-container'>
-				{timelineComponents}
-			</div>
+		<div className='timelines-container'>
+			{timelineComponents}
+			{/* <CarouselHorizontal children={timelineComponents}></CarouselHorizontal> */}
 		</div>
 	);
 };

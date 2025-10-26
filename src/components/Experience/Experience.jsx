@@ -68,11 +68,11 @@ const Experience = () => {
 				);
 			}, 25);
 		};
-		if(inView) incrementExperienceAmounts();
+		if (inView) incrementExperienceAmounts();
 		return () => {
 			clearInterval(intervalIdSE);
 			clearInterval(intervalIdPE);
-		}
+		};
 	}, [inView]);
 
 	const experienceCardComponents = experiences.map((experience, idx) => (
@@ -100,8 +100,18 @@ const Experience = () => {
 						solve for. That being said, my next big goal to level up is getting into freelancing projects. I look
 						forward to the challenge nad opportunity that awaits.
 					</p>
+					<h2>Certifications</h2>
+					<div className='button-container'>
+						<ButtonPrimary
+							content={"Software Engineering Certification"}
+							url={"../../../content/SpringboardCertificate.pdf"}></ButtonPrimary>
+						<ButtonPrimary
+							content={"AWS Cloud Practitioner Certification"}
+							url={"../../../content/AWSCertification.pdf"}></ButtonPrimary>
+					</div>
 				</div>
 				<div className='subsection center'>
+					<Timeline></Timeline>
 					<div ref={ref} className='experience-stats-container'>
 						<div className='stat'>
 							<p className='content'>+{softwareEngineeringExpCurrent}</p>
@@ -111,14 +121,6 @@ const Experience = () => {
 							<p className='content'>+{professionalExpCurrent}</p>
 							<p className='description'>Years of Professional Experience</p>
 						</div>
-					</div>
-					<div className='button-container'>
-						<ButtonPrimary
-							content={"Software Engineering Certification"}
-							url={"../../../content/SpringboardCertificate.pdf"}></ButtonPrimary>
-						<ButtonPrimary
-							content={"AWS Cloud Practitioner Certification"}
-							url={"../../../content/AWSCertification.pdf"}></ButtonPrimary>
 					</div>
 				</div>
 			</div>

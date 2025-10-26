@@ -9,10 +9,6 @@ const Homepage = () => {
 		<div>
             <AboutMe></AboutMe>
 			<Experience />
-				<Timeline />
-				{/* <Education/> */}
-				{/* <ContactMe/> */}
-
 		</div>
 	);
 };
