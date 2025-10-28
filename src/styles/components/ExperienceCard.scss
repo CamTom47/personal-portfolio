@@ -1,6 +1,6 @@
 @use "../../styles/theme.scss";
 
-@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop) {
+@media (min-width: theme.$breakpoint-mobile) {
 	.ExperienceCard-container {
 		display: flex;
 		flex-direction: column;
@@ -48,7 +48,6 @@
 		justify-self: stretch;
 		align-items: center;
 		align-self: stretch;
-		height: 100%;
 		width: 100%;
 		background-color: white;
 		color: theme.$primary-200;

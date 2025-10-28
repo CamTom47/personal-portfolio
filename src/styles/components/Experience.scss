@@ -1,6 +1,6 @@
 @use "../../styles//theme.scss";
 
-@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-tablet-portrait) {
+@media (min-width: theme.$breakpoint-mobile) {
 	.experience-container {
 		display: flex;
 		background-color: theme.$background;
@@ -90,6 +90,7 @@
 		row-gap: 4rem;
 		column-gap: 4rem;
 		text-align: center;
+		
 	}
 	.container-subheader {
 		color: theme.$primary-200;
@@ -103,16 +104,28 @@
 	}
 }
 
-@media (min-width: theme.$breakpoint-tablet-portrait) and (max-width: theme.$breakpoint-laptop) {
+@media (min-width: theme.$breakpoint-tablet-portrait) {
 	.experiences {
 		box-sizing: border-box;
 		display: grid;
-		grid-template-columns: [start] 1fr [first] 1fr [end];
+		grid-template-columns: [start] 1fr [end];
 		row-gap: 4rem;
 		column-gap: 4rem;
 		text-align: center;
 		justify-content: center;
 	}
+
+	.experience-stats-container {
+		flex-direction: row;
+
+	}
+}
+
+@media (min-width: theme.$breakpoint-tablet-landscape) {
+.experiences{
+			grid-template-columns: [start] 1fr [second] 1fr [end];
+
+}
 }
 
 //breakpoint specific for experience card grid collumn resizing to fix the page
@@ -130,6 +143,7 @@
 	}
 	.section {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
 		height: fit-content;
 		column-gap: 12rem;

@@ -137,10 +137,11 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-evenly;
-			width: 55%;
+			width: 90%;
 			z-index: 1;
 		}
 		.header-content {
+			margin-top: 12rem;
 			font-size: 7.2rem;
 			color: theme.$primary-200;
 			font-weight: 400;
@@ -157,7 +158,7 @@
 			font-weight: 300;
 		}
 		.aboutme-content {
-			font-size: 2rem;
+			font-size: 2.8rem;
 			color: black;
 			font-weight: 300;
 			margin-bottom: 4rem;
