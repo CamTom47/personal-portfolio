@@ -1,6 +1,6 @@
 @use "../../styles//theme.scss";
 
-@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop) {
+@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-tablet-portrait) {
 	.experience-container {
 		display: flex;
 		background-color: theme.$background;
@@ -22,6 +22,12 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: 3.2rem;
+
+		h2 {
+			color: theme.$primary-200;
+			font-size: 2.4rem;
+			margin-top: 12rem;
+		}
 
 		&.center {
 			flex-direction: column;
@@ -95,36 +101,21 @@
 		text-decoration-thickness: 0.2rem;
 		text-underline-offset: 0.6rem;
 	}
+}
 
-	.education-section {
-		display: flex;
-		flex-direction: column;
-		row-gap: 1.2rem;
-		margin-top: 12rem;
-	}
-	.education-header {
-		font-size: 2.4em;
-		color: theme.$primary-200;
-		font-weight: 400;
-		padding: 0;
-
-		margin-bottom: 0.4rem;
-	}
-	.education-row {
-		display: flex;
-		align-items: baseline;
-		column-gap: 2rem;
-	}
-	.education-date {
-		font-size: 1.6rem;
-		padding: 0;
-	}
-	.education-credential {
-		padding-left: 2rem;
-		font-size: 1.6rem;
+@media (min-width: theme.$breakpoint-tablet-portrait) and (max-width: theme.$breakpoint-laptop) {
+	.experiences {
+		box-sizing: border-box;
+		display: grid;
+		grid-template-columns: [start] 1fr [first] 1fr [end];
+		row-gap: 4rem;
+		column-gap: 4rem;
+		text-align: center;
+		justify-content: center;
 	}
 }
 
+//breakpoint specific for experience card grid collumn resizing to fix the page
 @media (min-width: theme.$breakpoint-laptop) {
 	.experience-container {
 		display: flex;
@@ -135,6 +126,7 @@
 		height: fit-content;
 		padding: 12rem 12rem;
 		border-bottom: 1px solid theme.$primary-200;
+		justify-content: center;
 	}
 	.section {
 		display: flex;
@@ -146,7 +138,7 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: 2.8rem;
-		width: 50%;
+		width: fit-content;
 
 		h2 {
 			color: theme.$primary-200;
@@ -215,6 +207,10 @@
 		row-gap: 4rem;
 		column-gap: 4rem;
 		text-align: center;
+		justify-self: center;
+		align-self: center;
+		justify-content: center;
+		width: 100%;
 	}
 	.container-subheader {
 		color: theme.$primary-200;
@@ -225,5 +221,17 @@
 		text-decoration-line: solid;
 		text-decoration-thickness: 0.2rem;
 		text-underline-offset: 0.6rem;
+	}
+}
+
+@media (min-width: theme.$breakpoint-desktop) {
+	.experience-container {
+		padding: 12rem 24rem;
+	}
+	.subsection {
+		display: flex;
+		flex-direction: column;
+		row-gap: 2.8rem;
+		width: fit-content;
 	}
 }

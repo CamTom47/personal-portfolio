@@ -5,7 +5,7 @@ const AboutMe = () => {
 	return (
 		<div className='AboutMe-container'>
 			<div className='content-container'>
-				<div>
+				<div className="header-div">
 					<h1 className='header-content'> Cameron Thomas</h1>
 					<p className='subheader-content'>Full Stack Engineer</p>
 				</div>
