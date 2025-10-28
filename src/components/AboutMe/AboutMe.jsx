@@ -16,7 +16,7 @@ const AboutMe = () => {
 						</div>
 				</div>
 			</div>
-			<img className='headshot' src={require("../../assets/images/headshot.jpg")} alt='Headshot of Cameron Thomas' />
+			<img className='headshot' src="../../../public/images/headshot.jpg" alt='Headshot of Cameron Thomas' />
 		</div>
 	);
 };
