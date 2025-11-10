@@ -15,7 +15,7 @@ const AboutMe = () => {
 						problem that cannot be solved given enough time, effort, and attention.
 					</p>
 					<div className='button-container'>
-						<ButtonPrimary content={"Download Resume"} url={"../../public/content/Resume.pdf"}></ButtonPrimary>
+						<ButtonPrimary content={"Download Resume"} url={"../../../public/content/Resume.pdf"}></ButtonPrimary>
 					</div>
 				</div>
 			</div>
