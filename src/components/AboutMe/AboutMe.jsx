@@ -1,5 +1,7 @@
 import "../../styles/components/AboutMe.scss";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
+import headshot from '../../assets/headshot.jpg'
+import resumeURL from '../../assets/pdfs/Resume.pdf';
 
 const AboutMe = () => {
 	return (
@@ -15,11 +17,11 @@ const AboutMe = () => {
 						problem that cannot be solved given enough time, effort, and attention.
 					</p>
 					<div className='button-container'>
-						<ButtonPrimary content={"Download Resume"} url={"../../../public/content/Resume.pdf"}></ButtonPrimary>
+						<ButtonPrimary content={"Download Resume"} url={resumeURL}></ButtonPrimary>
 					</div>
 				</div>
 			</div>
-			<img className='headshot' src='../../../images/headshot.jpg' alt='Headshot of Cameron Thomas' />
+			<img className='headshot' src={headshot} alt='Headshot of Cameron Thomas' />
 		</div>
 	);
 };

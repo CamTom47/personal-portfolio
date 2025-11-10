@@ -2,6 +2,8 @@ import "../../styles/components/Experience.scss";
 import ExperienceCard from "../ExperienceCard/ExperienceCard";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 import Timeline from "../Timeline/Timeline";
+import seCertificate from '../../assets/pdfs/SpringboardCertificate.pdf';
+import awsCertificate from '../../assets/pdfs/AWSCertification.pdf';
 
 import { useState, useEffect } from "react";
 
@@ -101,10 +103,10 @@ const Experience = () => {
 					<div className='button-container'>
 						<ButtonPrimary
 							content={"Software Engineering Certification"}
-							url={"../../../public/content/SpringboardCertificate.pdf"}></ButtonPrimary>
+							url={seCertificate}></ButtonPrimary>
 						<ButtonPrimary
 							content={"AWS Cloud Practitioner Certification"}
-							url={"../../../public/content/AWSCertification.pdf"}></ButtonPrimary>
+							url={awsCertificate}></ButtonPrimary>
 					</div>
 				</div>
 				<div className='subsection center'>
