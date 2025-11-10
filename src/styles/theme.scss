@@ -18,7 +18,7 @@ $breakpoint-desktop: 1920px;
 $breakpoint-laptop: 1512px;
 $breakpoint-tablet-portrait: 768px;
 $breakpoint-tablet-landscape: 1024px;
-$breakpoint-mobile: 430px;
+$breakpoint-mobile: 0px;
 
 @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-laptop) {
 	html {
