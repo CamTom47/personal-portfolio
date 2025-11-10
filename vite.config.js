@@ -7,6 +7,7 @@ export default defineConfig({
     outDir: 'build', // CRA's default build output
   },
   server: {
-    port: 3000
+    port: 3000,
+    host: '0.0.0.0'
   }
-});
+})
