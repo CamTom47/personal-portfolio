@@ -62,9 +62,9 @@ const Navbar = () => {
 				</div>
 			) : (
 				<div className={showHamburgerMenu ? "hamburger" : "hidden"} onClick={handleMenuToggle}>
-					<div id='bar1' className='bar'></div>
+					{/* <div id='bar1' className='bar'></div>
 					<div id='bar2' className='bar'></div>
-					<div id='bar3' className='bar'></div>
+					<div id='bar3' className='bar'></div> */}
 				</div>
 			)}
 			<div className={menuOpen ? "dropdown-menu active" : "dropdown-menu hidden"}>
