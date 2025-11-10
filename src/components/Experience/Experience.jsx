@@ -101,10 +101,10 @@ const Experience = () => {
 					<div className='button-container'>
 						<ButtonPrimary
 							content={"Software Engineering Certification"}
-							url={"../../../content/SpringboardCertificate.pdf"}></ButtonPrimary>
+							url={"../../public/content/SpringboardCertificate.pdf"}></ButtonPrimary>
 						<ButtonPrimary
 							content={"AWS Cloud Practitioner Certification"}
-							url={"../../../content/AWSCertification.pdf"}></ButtonPrimary>
+							url={"../../public/content/AWSCertification.pdf"}></ButtonPrimary>
 					</div>
 				</div>
 				<div className='subsection center'>
