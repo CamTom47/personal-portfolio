@@ -2,7 +2,6 @@ import "../../styles/components/Experience.scss";
 import ExperienceCard from "../ExperienceCard/ExperienceCard";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 import Timeline from "../Timeline/Timeline";
-import '../../../public'
 
 import { useState, useEffect } from "react";
 
