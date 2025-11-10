@@ -1,19 +1,31 @@
 @use "../theme.scss";
 
-.StackBubble-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	// grid-template-columns: [start] 1fr [first] 1fr [second] 1fr [end];
-
+@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop) {
 	.image {
-		height: 6rem;
-		width: 6rem;
+		height: 4rem;
+		width: 4rem;
 	}
-
 	.bubble-content {
-		font-size: 1.6rem;
-		margin-bottom: 1.6rem;
+		font-size: 1.2rem;
+		margin-bottom: 1.2rem;
+	}
+}
+
+@media (min-width: theme.$breakpoint-laptop) {
+	.StackBubble-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		.image {
+			height: 6rem;
+			width: 6rem;
+		}
+
+		.bubble-content {
+			font-size: 1.6rem;
+			margin-bottom: 1.6rem;
+		}
 	}
 }
