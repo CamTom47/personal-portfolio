@@ -5,13 +5,17 @@ $primary-300: #e66e75;
 $secondary-100: #e6c17c;
 $secondary-200: #e6b27c;
 $background: #f7f7f7;
+$gray: #656464;
 
 //helper variables
-$navbar-height: 8rem;
-$navbar-padding-x: 1rem;
-$navbar-padding-y: 12rem;
+$navbar-height: 7.2rem;
+$navbar-padding-y: 1.6rem;
+$navbar-padding-x: 12rem;
 
-$page-height: calc(100vh - $navbar-height - $navbar-padding-y);
+// height: 7.2rem;
+// 		padding: 1.6rem 12rem;
+
+$page-height: calc(100vh - $navbar-height);
 
 //Media Break Point Variables
 $breakpoint-desktop: 1920px;
