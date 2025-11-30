@@ -135,7 +135,7 @@ COPY --from=build --chown=nodejs:nodejs /app/build ./build
 USER nodejs
 
 # Expose the port that the application listens on.
-EXPOSE 3000
+EXPOSE 8080
 
 # Run the application.
 CMD ["serve", "-s", "build"]
