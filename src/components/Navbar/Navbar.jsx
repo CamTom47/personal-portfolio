@@ -51,30 +51,30 @@ const Navbar = () => {
 					<FontAwesomeIcon icon={faEnvelope} />
 				</a>
 			</div>
-			{!showHamburgerMenu ? (
+			{/* {!showHamburgerMenu ? (
 				<div className='links'>
-					{/* <a className='Navbar-link' href='/'>
+					<a className='Navbar-link' href='/'>
 						About
 					</a>
-					<a className='Navbar-link' href='/projects'>
+					<a className='Navbar-link' href='/portfolio'>
 						Portfolio
-					</a> */}
+					</a>
 				</div>
 			) : (
 				<div className={showHamburgerMenu ? "hamburger" : "hidden"} onClick={handleMenuToggle}>
-					{/* <div id='bar1' className='bar'></div>
+					<div id='bar1' className='bar'></div>
 					<div id='bar2' className='bar'></div>
-					<div id='bar3' className='bar'></div> */}
+					<div id='bar3' className='bar'></div>
 				</div>
-			)}
-			<div className={menuOpen ? "dropdown-menu active" : "dropdown-menu hidden"}>
-				{/* <a className='Navbar-link' href=''>
+			)} */}
+			{/* <div className={menuOpen ? "dropdown-menu active" : "dropdown-menu hidden"}>
+				<a className='Navbar-link' href='/'>
 						About
 					</a>
-					<a className='Navbar-link' href=''>
+					<a className='Navbar-link' href='/portfolio'>
 						Portfolio
-					</a> */}
-			</div>
+					</a>
+			</div> */}
 		</div>
 	);
 };

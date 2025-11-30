@@ -9,8 +9,12 @@
 		top: 0;
 		align-items: center;
 		width: 100%;
-		height: fit-content;
-		padding: 1.6rem 1rem;
+
+		//CHANGE NAVBAR HEIGHT VARIABLES IN THE theme.scss file. The variables are used to drive the page height for other components
+		height: theme.$navbar-height;
+		//CHANGE NAVBAR HEIGHT VARIABLES IN THE theme.scss file. The variables are used to drive the page height for other components
+		padding: calc(theme.$navbar-padding-y / 2) calc(theme.$navbar-padding-x / 2);
+
 		background-color: theme.$background;
 		z-index: 9999;
 		border-bottom: 1px solid theme.$primary-100;
@@ -158,8 +162,10 @@
 		top: 0;
 		align-items: center;
 		width: 100%;
-		height: 7.2rem;
-		padding: 1.6rem 12rem;
+		//CHANGE NAVBAR HEIGHT VARIABLES IN THE theme.scss file. The variables are used to drive the page height for other components
+		height: theme.$navbar-height;
+		//CHANGE NAVBAR HEIGHT VARIABLES IN THE theme.scss file. The variables are used to drive the page height for other components
+		padding: calc(theme.$navbar-padding-y / 2) calc(theme.$navbar-padding-x / 2);
 		background-color: theme.$background;
 		z-index: 9999;
 		border-bottom: 1px solid theme.$primary-100;
