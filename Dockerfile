@@ -138,4 +138,4 @@ USER nodejs
 EXPOSE 8080
 
 # Run the application.
-CMD ["serve", "-s", "-p 8080" "build"]
+CMD ["serve", "-s", "-p", "8080", "build"]
