@@ -3,7 +3,7 @@
 @media (min-width: theme.$breakpoint-mobile) {
 	.experience-container {
 		display: flex;
-		background-color: theme.$background;
+		background-color: theme.$primary;
 		box-sizing: border-box;
 		flex-direction: column;
 		row-gap: 12rem;
@@ -43,7 +43,7 @@
 		width: 100%;
 	}
 	.experience-content {
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 	}
 	.container-header {
 		font-size: 3.6rem;
@@ -90,7 +90,6 @@
 		row-gap: 4rem;
 		column-gap: 4rem;
 		text-align: center;
-		
 	}
 	.container-subheader {
 		color: theme.$primary-200;
@@ -117,22 +116,20 @@
 
 	.experience-stats-container {
 		flex-direction: row;
-
 	}
 }
 
 @media (min-width: theme.$breakpoint-tablet-landscape) {
-.experiences{
-			grid-template-columns: [start] 1fr [second] 1fr [end];
-
-}
+	.experiences {
+		grid-template-columns: [start] 1fr [second] 1fr [end];
+	}
 }
 
 //breakpoint specific for experience card grid collumn resizing to fix the page
 @media (min-width: theme.$breakpoint-laptop) {
 	.experience-container {
 		display: flex;
-		background-color: theme.$background;
+		background-color: theme.$primary;
 		box-sizing: border-box;
 		flex-direction: column;
 		row-gap: 8rem;
@@ -176,7 +173,7 @@
 		width: 60%;
 		height: fit-content;
 
-		h2{
+		h2 {
 			margin: 0;
 		}
 	}

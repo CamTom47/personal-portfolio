@@ -1,0 +1,36 @@
+@use "../theme.scss";
+
+.job-card {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.2rem;
+    row-gap: 1.6rem;
+}
+
+.row {
+	display: flex;
+	column-gap: 1.2rem;
+}
+
+.job-title {
+	color: theme.$primary-400;
+}
+
+.summary {
+	background-color: none;
+    	color: theme.$primary-400;
+
+}
+
+.date {
+	color: theme.$accent;
+}
+
+.skills{
+    display: flex;
+    column-gap: 1.2rem;
+    row-gap: 1.2rem;
+    flex-wrap: wrap;
+}

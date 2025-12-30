@@ -8,6 +8,7 @@ import awsCertificate from "../../assets/pdfs/AWSCertification.pdf";
 import { useState, useEffect } from "react";
 
 import { useInView } from "react-intersection-observer";
+import JobCard from "../JobCard/JobCard";
 
 const experiences = [
 	{
@@ -85,26 +86,14 @@ const Experience = () => {
 			<div id='Title' className='section'>
 				<div className='subsection'>
 					<h1 className='container-header'> Experience</h1>
-					<p className='experience-content'>
-						My experience prior to transitioning into the world of software engineering consists of six years in the
-						construction industry. A majority of it was spent as Senior Project Engineer for a General Contractor and
-						partly as a Draftsperson at an Architectural Firm. While my technical skills continue to grow daily. These
-						previous roles taught me crucial soft skills, that when combined with my newfound technical skillset, allow
-						me to create value for others through effective communication, collaboration, and engineering.
-					</p>
-					<p className='experience-content'>
-						I recognize that there are many avenues to Software Engineering that I'd love to explore, so my current
-						focus is to gain exposure to as much as I can. In addition to the experience I'm gaining from my day to day
-						job and my amazing teammates, I'm continuing to learn through multiple personal projects as well. I find
-						that I'm continuously looking to improve my skills in my free time, but my constraint is finding the
-						problems to solve for. That being said, my next big goal to level up is getting into freelancing projects. I
-						look forward to the challenge and opportunity that awaits.
-					</p>
-						<div className='button-container'>
+					<JobCard dateRange={'2025 - Current'} title={'Project Engineer - Brinkley RV'} description={`A curious Software Engineer with a passion for continuous improvement and a firm believer that there is no
+				problem that cannot be solved given enough time, effort, and attention.`} skills={['Javascript', 'Vue.js', 'Netsuite', 'SuiteQL', ]}/>
+					<p className='experience-content'></p>
+					<div className='button-container'>
 						<h2>Certifications</h2>
-							<ButtonPrimary content={"Software Engineering Certification"} url={seCertificate}></ButtonPrimary>
-							<ButtonPrimary content={"AWS Cloud Practitioner Certification"} url={awsCertificate}></ButtonPrimary>
-						</div>
+						<ButtonPrimary content={"Software Engineering Certification"} url={seCertificate}></ButtonPrimary>
+						<ButtonPrimary content={"AWS Cloud Practitioner Certification"} url={awsCertificate}></ButtonPrimary>
+					</div>
 				</div>
 				<div className='subsection center'>
 					<Timeline></Timeline>

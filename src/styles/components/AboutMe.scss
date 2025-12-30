@@ -1,184 +1,52 @@
 @use "../theme";
-
-@media (min-width: theme.$breakpoint-mobile) {
-	.AboutMe-container {
-		box-sizing: border-box;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		height: fit-content;
-		padding: 4rem 1rem;
-		position: relative;
-		background-image: linear-gradient(50deg, rgb(247, 247, 247) 50%, rgb(221, 221, 221) 90%);
-		border-bottom: 1px solid theme.$primary-100;
-
-		.content-container {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			text-align: center;
-			z-index: 1;
-			row-gap: 4rem;
-
-			div {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-			}
-		}
-		.header-content {
-			font-size: 3.6rem;
-			color: theme.$primary-200;
-			font-weight: 400;
-			vertical-align: bottom;
-		}
-		.subheader-content {
-			font-size: 2.8rem;
-			color: darkgray;
-			font-weight: 400;
-			margin-bottom: 90vw;
-		}
-		.descriptor {
-			font-size: 4.8rem;
-			color: theme.$primary-200;
-			font-weight: 300;
-		}
-		.aboutme-content {
-			font-size: 1.6rem;
-			color: black;
-			font-weight: 300;
-			margin-bottom: 2rem;
-		}
-	}
-
-	.headshot {
-		position: absolute;
-		width: 100vw;
-		height: auto;
-		top: 10.8rem;
-	}
-}
-@media (min-width: theme.$breakpoint-tablet-portrait) {
-	.AboutMe-container{
-				background-image: linear-gradient(60deg, rgb(247, 247, 247) 50%, rgb(221, 221, 221) 90%);
-
-	}
-	.content-container {
-		align-items: start;
-		z-index: 1;
-		row-gap: 4rem;
-
-		.header-div {
-			margin-top: 14rem;
-					text-align: start;
-
-		}
-
-		.subheader-content {
-			margin-bottom: 26vw;
-			
-		}
-	}
-	.headshot {
-		width: 70vw;
-		height: auto;
-		top: 0rem;
-		right: 0;
-	}
+.AboutMe-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2.8rem;
+	padding: 8rem 1.2rem;
 }
 
-@media (min-width: theme.$breakpoint-tablet-landscape) {
-		.AboutMe-container{
-			padding: 4rem;
-			height: 100vh;
-		}
-	.content-container {
-		align-items: start;
-		z-index: 1;
-		row-gap: 4rem;
-		.header-div {
-			margin-top: 4rem;
-			text-align: start;
-		}
-
-		.subheader-content {
-			margin-bottom: 0;
-		}
-
-		.aboutme-content{
-			text-align: start;
-			width: 40%;
-		}
-		.button-container{
-			width: 40%;
-		}
-	}
-	.headshot {
-		width: 70vw;
-		height: auto;
-		top: 0rem;
-		right: 0;
-	}
+.header-div {
+	display: flex;
+	flex-direction: column;
+	row-gap: .8rem;
 }
 
-@media (min-width: theme.$breakpoint-laptop) {
-	.AboutMe-container {
-		box-sizing: border-box;
-		display: flex;
-		justify-content: start;
-		align-items: start;
-		height: 100vh;
-		padding: 4rem 12rem;
-		position: relative;
-		background-image: linear-gradient(70deg, rgb(247, 247, 247) 50%, rgb(221, 221, 221) 90%);
-		border-bottom: 1px solid theme.$primary-100;
-
-		.content-container {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
-			width: 90%;
-			z-index: 1;
-		}
-		.header-content {
-			margin-top: 12rem;
-			font-size: 7.2rem;
-			color: theme.$primary-200;
-			font-weight: 400;
-			vertical-align: bottom;
-		}
-		.subheader-content {
-			font-size: 3.6rem;
-			color: darkgray;
-			font-weight: 400;
-		}
-		.descriptor {
-			font-size: 4.8rem;
-			color: theme.$primary-200;
-			font-weight: 300;
-		}
-		.aboutme-content {
-			font-size: 2.8rem;
-			color: black;
-			font-weight: 300;
-			margin-bottom: 4rem;
-		}
-
-		.button-container {
-			width: 40%;
-		}
-	}
-
-	.headshot {
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 100%;
-		width: auto;
-		border: 2px solid var(--primary-color);
-		z-index: 0;
-	}
+.header-content {
+	font-size: 3.6rem;
+	color: theme.$primary-400;
+	font-weight: 300;
 }
 
-@media (min-width: theme.$breakpoint-desktop) {
+.subheader-content {
+	font-size: 1.8rem;
+	color: theme.$accent;
+    font-weight: 300;
+}
+
+.section-content {
+	font-size: 1.4rem;
+	color: theme.$primary-400;
+}
+.icons{
+    display: flex;
+    column-gap: 1.6rem;
+a{
+    color: theme.$accent;
+
+    .icon{
+        height: 2.8rem;
+        width: auto;
+    }
+}
+}
+
+.descriptions{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+
+    span{
+        color: theme.$accent;
+    }
 }

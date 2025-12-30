@@ -1,8 +1,8 @@
-@use '../theme.scss';
+@use "../theme.scss";
 
-.ContactMe-container{
-    background-color: theme.$background;
-    padding: 12rem
+.ContactMe-container {
+	background-color: theme.$primary;
+	padding: 12rem;
 }
 
 .icon-container {
@@ -15,6 +15,6 @@
 }
 .icon:hover {
 	height: 20rem;
-	color: theme.$primary-100;
+	color: theme.$primary;
 	transition: 0.1s;
 }

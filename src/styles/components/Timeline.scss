@@ -33,7 +33,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-color: theme.$background;
+		background-color: theme.$primary;
 		border-radius: 0.8rem;
 		height: 36rem;
 		width: 32rem;
@@ -61,7 +61,7 @@
 		font-size: 2rem;
 		color: white;
 		font-weight: 600;
-		margin: .8rem;
+		margin: 0.8rem;
 		z-index: 20;
 	}
 	.timeline-description {
@@ -87,14 +87,14 @@
 		align-items: center;
 
 		* {
-			color: theme.$background;
+			color: theme.$primary;
 		}
 
 		&.left {
 			border-radius: 0 2rem 0 0.8rem;
 
 			&:hover {
-				background-color: theme.$background;
+				background-color: theme.$primary;
 				border-right: 1px solid theme.$primary-200;
 				border-top: 1px solid theme.$primary-200;
 				transition-duration: 80ms;
@@ -109,7 +109,7 @@
 			border-radius: 2rem 0 0.8rem 0;
 
 			&:hover {
-				background-color: theme.$background;
+				background-color: theme.$primary;
 				border-left: 1px solid theme.$primary-200;
 				border-top: 1px solid theme.$primary-200;
 				transition-duration: 80ms;
