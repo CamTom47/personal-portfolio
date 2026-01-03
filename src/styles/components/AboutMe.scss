@@ -1,5 +1,6 @@
 @use "../theme";
 .AboutMe-container {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	row-gap: 2.8rem;
@@ -9,7 +10,7 @@
 .header-div {
 	display: flex;
 	flex-direction: column;
-	row-gap: .8rem;
+	row-gap: 0.8rem;
 }
 
 .header-content {
@@ -18,35 +19,41 @@
 	font-weight: 300;
 }
 
-.subheader-content {
-	font-size: 1.8rem;
-	color: theme.$accent;
-    font-weight: 300;
+.underline {
+	width: 15%;
+	margin-top: 0.4rem;
+	margin-left: 1.2rem;
+	height: 0.5px;
+	background-color: white;
 }
 
 .section-content {
 	font-size: 1.4rem;
 	color: theme.$primary-400;
 }
-.icons{
-    display: flex;
-    column-gap: 1.6rem;
-a{
-    color: theme.$accent;
+.icons {
+	display: flex;
+	column-gap: 1.6rem;
+	a {
+		color: theme.$accent;
 
-    .icon{
-        height: 2.8rem;
-        width: auto;
-    }
+		.icon {
+			height: 2.8rem;
+			width: auto;
+		}
+	}
 }
+
+.descriptions {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2.4rem;
+
+	span {
+		color: theme.$accent;
+	}
 }
 
-.descriptions{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.6rem;
 
-    span{
-        color: theme.$accent;
-    }
+@media (min-width: theme.$breakpoint-tablet-portrait) {
 }

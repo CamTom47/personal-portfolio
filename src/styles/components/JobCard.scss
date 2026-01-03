@@ -5,13 +5,14 @@
 	height: fit-content;
 	display: flex;
 	flex-direction: column;
-	font-size: 1.2rem;
-    row-gap: 1.6rem;
+	font-size: 1.4rem;
+	row-gap: 1.6rem;
 }
 
-.row {
+.header-container {
 	display: flex;
-	column-gap: 1.2rem;
+	flex-direction: column;
+	row-gap: 0.4rem;
 }
 
 .job-title {
@@ -20,17 +21,17 @@
 
 .summary {
 	background-color: none;
-    	color: theme.$primary-400;
-
+	color: theme.$primary-400;
+	font-size: 1.2rem;
 }
 
 .date {
 	color: theme.$accent;
 }
 
-.skills{
-    display: flex;
-    column-gap: 1.2rem;
-    row-gap: 1.2rem;
-    flex-wrap: wrap;
+.skills {
+	display: flex;
+	column-gap: 1.2rem;
+	row-gap: 1.2rem;
+	flex-wrap: wrap;
 }

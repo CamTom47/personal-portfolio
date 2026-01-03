@@ -1,11 +1,22 @@
 @use "theme";
 
+
+@font-face {
+	font-family: space-mono;
+	src: url('../../public/fonts/Space_Mono/SpaceMono-Regular.ttf');
+}
+
 .App {
 	background-color: theme.$primary;
 	height: 100%;
 	width: 100vw;
-
-	font-family: roboto-mono, monospace;
+	font-family: space-mono, mono;
 	font-style: normal;
-	font-weight: 100;
+	font-weight: 400;
+}
+
+.subheader-content {
+	font-size: 1.8rem;
+	color: theme.$accent;
+	font-weight: 300;
 }
