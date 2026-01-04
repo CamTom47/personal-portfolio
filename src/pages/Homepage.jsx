@@ -15,7 +15,7 @@ import awsCertificate from "../assets/pdfs/AWSCertification.pdf";
 
 import "../styles/components/AboutMe.scss";
 import "../styles/components/Experience.scss";
-import "../styles/pages/homepage.scss";
+import "../styles/pages/Homepage.scss";
 
 const experiences = [
 	{
