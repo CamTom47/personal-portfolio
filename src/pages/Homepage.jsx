@@ -245,7 +245,7 @@ const Homepage = () => {
 								link={"https://www.sesamebooking.com"}
 								name={"Sesame Booking"}
 								type={"Web App"}
-								imageSrc={"public/Portfolio/ProjectImages/sesame-web-app.png"}
+								imageSrc={"/Portfolio/ProjectImages/sesame-web-app.png"}
 								description={
 									"Sesame Booking is booking platform geared towards hourly rentals. It offers a hands off host experience with automation from client booking through checkout."
 								}
@@ -266,7 +266,7 @@ const Homepage = () => {
 								link={"https://www.sesamebooking.com"}
 								name={"Sesame Booking"}
 								type={"Website"}
-								imageSrc={"public/Portfolio/ProjectImages/sesame-website.png"}
+								imageSrc={"/Portfolio/ProjectImages/sesame-website.png"}
 								description={"Website for Sesame Booking. This website was built using Word Press."}
 								status={"Complete"}
 								skills={["Word Press", "Penpot"]}
@@ -275,7 +275,7 @@ const Homepage = () => {
 								link={"https://www.frameworksdev.com"}
 								name={"Frameworks Development"}
 								type={"Website"}
-								imageSrc={"public/Portfolio/ProjectImages/frameworks-website.png"}
+								imageSrc={"/Portfolio/ProjectImages/frameworks-website.png"}
 								description={
 									"This is the website for Frameworks Development, a Software Development Agency. The website was designed with Penpot, and built using NodeJS/Express and React. It supports a fully responsive design and exernal API integration for contact for processing and email automation."
 								}
@@ -286,7 +286,7 @@ const Homepage = () => {
 								link={"#"}
 								name={"Fitly"}
 								type={"Web App"}
-								imageSrc={"public/Portfolio/ProjectImages/fitly.png"}
+								imageSrc={"/Portfolio/ProjectImages/fitly.png"}
 								description={
 									"Filty is a Single Page Application built using a layered architecture with a PERN stack. The web application provides a means for users to create custom worksouts.  "
 								}
