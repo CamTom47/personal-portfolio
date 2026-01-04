@@ -1,31 +1,13 @@
 @use "../theme.scss";
 
-@media (min-width: theme.$breakpoint-mobile) and (max-width: theme.$breakpoint-laptop) {
-	.image {
+	.stack-image {
 		height: 4rem;
 		width: 4rem;
+		background-color: theme.$accent;
+		padding: .8rem;
+		border-radius: .4rem;
 	}
 	.bubble-content {
 		font-size: 1.2rem;
 		margin-bottom: 1.2rem;
 	}
-}
-
-@media (min-width: theme.$breakpoint-laptop) {
-	.StackBubble-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-
-		.image {
-			height: 6rem;
-			width: 6rem;
-		}
-
-		.bubble-content {
-			font-size: 1.6rem;
-			margin-bottom: 1.6rem;
-		}
-	}
-}

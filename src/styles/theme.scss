@@ -1,11 +1,9 @@
 //color theme
-$primary-100: #e6966e;
-$primary-200: #e6816e;
-$primary-300: #e66e75;
-$secondary-100: #e6c17c;
-$secondary-200: #e6b27c;
-$background: #f7f7f7;
-$gray: #656464;
+$accent: #FFFADF;
+$primary: #808C76;
+$primary-200: #717265;
+$primary-300: #4c5b51;
+$primary-400: #33382F;
 
 //helper variables
 $navbar-height: 7.2rem;
@@ -20,8 +18,8 @@ $page-height: calc(100vh - $navbar-height);
 //Media Break Point Variables
 $breakpoint-desktop: 1920px;
 $breakpoint-laptop: 1512px;
-$breakpoint-tablet-portrait: 768px;
-$breakpoint-tablet-landscape: 1024px;
+$breakpoint-tablet-portrait: 1024px;
+$breakpoint-tablet-landscape: 1366px;
 $breakpoint-mobile: 0px;
 
 @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-laptop) {

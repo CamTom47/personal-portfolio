@@ -1,14 +1,16 @@
-import "../../styles/components/Experience.scss";
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
+import JobCard from "../JobCard/JobCard";
 import ExperienceCard from "../ExperienceCard/ExperienceCard";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 import Timeline from "../Timeline/Timeline";
+import ProjectCard from "../ProjectCard/ProjectCard";
+
 import seCertificate from "../../assets/pdfs/SpringboardCertificate.pdf";
 import awsCertificate from "../../assets/pdfs/AWSCertification.pdf";
 
-import { useState, useEffect } from "react";
-
-import { useInView } from "react-intersection-observer";
-
+import "../../styles/components/Experience.scss";
 const experiences = [
 	{
 		title: "Languages/Frameworks",
@@ -22,8 +24,8 @@ const experiences = [
 	},
 	{
 		title: "Design",
-		contents: ["CSS", "Tailwind", "Bootstrap", "Sass", "Penpot"],
-		images: ["CSS", "Tailwind", "Bootstrap", "Sass", "Penpot"],
+		contents: ["CSS", "Tailwind", "Bootstrap", "Sass", "Penpot", "Figma"],
+		images: ["CSS", "Tailwind", "Bootstrap", "Sass", "Penpot", "Figma"],
 	},
 	{
 		title: "Data Storage",
@@ -32,8 +34,8 @@ const experiences = [
 	},
 	{
 		title: "Dev Ops",
-		contents: ["Git", "Github", "Bit Bucket"],
-		images: ["Git", "Github", "BitBucket"],
+		contents: ["Git", "Github", "Bit Bucket", "Docker"],
+		images: ["Git", "Github", "BitBucket", "Docker"],
 	},
 
 	{
@@ -82,43 +84,109 @@ const Experience = () => {
 
 	return (
 		<div className='experience-container'>
-			<div id='Title' className='section'>
-				<div className='subsection'>
-					<h1 className='container-header'> Experience</h1>
-					<p className='experience-content'>
-						My experience prior to transitioning into the world of software engineering consists of six years in the
-						construction industry. A majority of it was spent as Senior Project Engineer for a General Contractor and
-						partly as a Draftsperson at an Architectural Firm. While my technical skills continue to grow daily. These
-						previous roles taught me crucial soft skills, that when combined with my newfound technical skillset, allow
-						me to create value for others through effective communication, collaboration, and engineering.
-					</p>
-					<p className='experience-content'>
-						I recognize that there are many avenues to Software Engineering that I'd love to explore, so my current
-						focus is to gain exposure to as much as I can. In addition to the experience I'm gaining from my day to day
-						job and my amazing teammates, I'm continuing to learn through multiple personal projects as well. I find
-						that I'm continuously looking to improve my skills in my free time, but my constraint is finding the
-						problems to solve for. That being said, my next big goal to level up is getting into freelancing projects. I
-						look forward to the challenge and opportunity that awaits.
-					</p>
-						<div className='button-container'>
-						<h2>Certifications</h2>
-							<ButtonPrimary content={"Software Engineering Certification"} url={seCertificate}></ButtonPrimary>
-							<ButtonPrimary content={"AWS Cloud Practitioner Certification"} url={awsCertificate}></ButtonPrimary>
-						</div>
+			<div className='container'>
+				<div>
+					<h1 className='subheader-content'> Experience</h1>
+					<div className='underline'></div>
 				</div>
-				<div className='subsection center'>
-					<Timeline></Timeline>
-					<div ref={ref} className='experience-stats-container'>
-						<div className='stat'>
-							<p className='content'>+{softwareEngineeringExpCurrent}</p>
-							<p className='description'>Years of SE Experience</p>
-						</div>
-						<div className='stat'>
-							<p className='content'>+{professionalExpCurrent}</p>
-							<p className='description'>Years of Professional Experience</p>
-						</div>
+
+				<JobCard
+					dateRange={"Feb 2025 - Current"}
+					title={"Software Developer - Brinkley RV"}
+					description={`Build and maintain new/existing NetSuite Scripts to assist 1000+ employees. Utilize VueJS to build custom applications that replace outdated industry standards as NetSuite integrations. Collaborate with a team of 75+ admin to field tickets and resolve unique issues. Analyze and leverage NetSuite records to created streamlined, data-rich SQL queries.`}
+					skills={["Javascript", "Vue.js", "Netsuite", "SuiteQL"]}
+				/>
+				<JobCard
+					dateRange={"Oct 2023 - Oct 2024"}
+					title={"Software Developer - Springboard"}
+					description={`Completed 700+ hours of hands-on course material, while receiving 1:1 industry expert mentor oversight, and completing 2-in-depth portfolio projects from end-to-end, developing fundamentals skills in front-end/back-end web development.`}
+					skills={["Javascript", "Vue.js", "Netsuite", "SuiteQL"]}
+				/>
+			</div>
+
+			{/* Projects */}
+			<div className='container'>
+				<div>
+					<h1 className='subheader-content'>Portfolio</h1>
+					<div className='underline'></div>
+				</div>
+				<div className='projects'>
+					<ProjectCard
+						link={"https://www.sesamebooking.com"}
+						name={"Sesame Booking"}
+						type={"Web App"}
+						imageSrc={"public/Portfolio/ProjectImages/sesame-web-app.png"}
+						description={
+							"Sesame Booking is booking platform geared towards hourly rentals. It offers a hands off host experience with automation from client booking through checkout."
+						}
+						status={"In Progress"}
+						skills={["Javascript", " React", "NextJS", "Express", "NodeJS", "TypeScript", "MongoDB", "Redux", "Figma"]}
+						github={""}></ProjectCard>
+					<ProjectCard
+						link={"https://www.sesamebooking.com"}
+						name={"Sesame Booking"}
+						type={"Website"}
+						imageSrc={"public/Portfolio/ProjectImages/sesame-website.png"}
+						description={"Website for Sesame Booking. This website was built using Word Press."}
+						status={"Complete"}
+						skills={["Word Press", "Penpot"]}
+						github={""}></ProjectCard>
+					<ProjectCard
+						link={"https://www.frameworksdev.com"}
+						name={"Frameworks Development"}
+						type={"Website"}
+						imageSrc={"public/Portfolio/ProjectImages/frameworks-website.png"}
+						description={
+							"This is the website for Frameworks Development, a Software Development Agency. The website was designed with Penpot, and built using NodeJS/Express and React. It supports a fully responsive design and exernal API integration for contact for processing and email automation."
+						}
+						status={"Complete"}
+						skills={["NodeJS", "Express", "React", "Javascript", "Penpot", "Docker", "Nginx"]}
+						github={"frameworks-dev"}></ProjectCard>
+					<ProjectCard
+						link={"#"}
+						name={"Fitly"}
+						type={"Web App"}
+						imageSrc={"public/Portfolio/ProjectImages/fitly.png"}
+						description={
+							"Filty is a Single Page Application built using a layered architecture with a PERN stack. The web application provides a means for users to create custom worksouts.  "
+						}
+						status={"Complete"}
+						skills={["NodeJS", "Express", "React", "Redux", "TypeScript", "Javascript"]}
+						github={"fitly"}></ProjectCard>
+					{/* <ProjectCard
+					link={"#"}
+					name={"Packlist"}
+					type={"Web App"}
+					imageSrc={""}
+					description={"Packlist"}
+					status={"Complete"}
+					skills={['Python', 'SqlAlchemy', 'PostgreSQL', 'Flask', 'Jinja']}
+					github={'packlist'}></ProjectCard> */}
+				</div>
+			</div>
+
+			{/* Certifications */}
+			<div className='button-container'>
+				<div>
+					<h2 className='subheader-content'>Certifications</h2>
+				</div>
+
+				<ButtonPrimary content={"Software Engineering Certification"} url={seCertificate}></ButtonPrimary>
+				<ButtonPrimary content={"AWS Cloud Practitioner Certification"} url={awsCertificate}></ButtonPrimary>
+			</div>
+
+			<div className='subsection center'>
+				{/* <Timeline></Timeline> */}
+				{/* <div ref={ref} className='experience-stats-container'>
+					<div className='stat'>
+						<p className='content'>+{softwareEngineeringExpCurrent}</p>
+						<p className='description'>Years of SE Experience</p>
 					</div>
-				</div>
+					<div className='stat'>
+						<p className='content'>+{professionalExpCurrent}</p>
+						<p className='description'>Years of Professional Experience</p>
+					</div>
+				</div> */}
 			</div>
 
 			<div className=''>

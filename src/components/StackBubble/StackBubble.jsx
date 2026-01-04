@@ -4,7 +4,7 @@ const StackBubble = ({ image, content }) => {
 	return (
 		<div className='StackBubble-container'>
 			<p className='bubble-content'>{content}</p>
-			<img className='image' src={`../../StackLogos/${image}.png`} alt='' />
+			<img className='stack-image' src={`../../StackLogos/${image}.png`} alt='' />
 		</div>
 	);
 };

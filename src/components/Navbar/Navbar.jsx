@@ -35,21 +35,7 @@ const Navbar = () => {
 	return (
 		<div className='Navbar-container'>
 			<div className='icon-container'>
-				<a className='nav-icon fa-3x' target='_blank' rel='noopener noreferrer' href='https://github.com/CamTom47'>
-					<FontAwesomeIcon icon={faGithub} />
-				</a>
-
-				<a
-					className='nav-icon fa-3x'
-					target='_blank'
-					rel='noopener noreferrer'
-					href='https://www.linkedin.com/in/cameron-mi-thomas'>
-					<FontAwesomeIcon icon={faLinkedin} />
-				</a>
-
-				<a className='nav-icon fa-3x' href='mailto:CamThomas47@gmail.com'>
-					<FontAwesomeIcon icon={faEnvelope} />
-				</a>
+				
 			</div>
 			{/* {!showHamburgerMenu ? (
 				<div className='links'>

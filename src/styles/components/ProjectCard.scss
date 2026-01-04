@@ -1,0 +1,88 @@
+@use "../theme.scss";
+
+.project-card-container {
+	display: flex;
+	flex-direction: column-reverse;
+	width: 100%;
+	height: fit-content;
+	font-size: 1.4rem;
+	row-gap: 1.4rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid theme.$primary-200;
+
+	.flex-container {
+		display: flex;
+		column-gap: 1.2rem;
+		
+		&.column{
+			flex-direction: column;
+			row-gap: 1.2rem;
+			justify-content: start;
+		}
+	}
+
+	.flex-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		row-gap: 1.2rem;
+
+		&.row {
+			flex-direction: row;
+			justify-content: start;
+			column-gap: 1.2rem;
+			align-items: center;
+		}
+	}
+
+	.project-title {
+		color: theme.$accent;
+		font-size: 1.6rem;
+	}
+	.status {
+		color: theme.$accent;
+	}
+
+	.link {
+		display: flex;
+		align-items: baseline;
+		fill: theme.$accent;
+	}
+	.github {
+		width: 2.8rem;
+		height: 2.8rem;
+		fill: theme.$primary-200;
+		background-color: theme.$accent;
+		border-radius: 0.4rem;
+
+		&:hover {
+			background-color: theme.$primary-200;
+			fill: theme.$accent;
+            transition-duration: 150ms;
+		}
+	}
+
+	.image {
+		border-radius: 1.2rem;
+		width: 200px;
+		max-width: 100%;
+		height: auto;
+		background-repeat: cover;
+	}
+
+	.description {
+	}
+
+	.link {
+	}
+}
+
+@media (min-width: theme.$breakpoint-tablet-portrait) {
+	.project-card-container {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		column-gap: 2rem;
+	}
+}
+
+
