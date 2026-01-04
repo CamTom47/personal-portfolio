@@ -2,21 +2,23 @@
 
 
 .pill {
-	color: theme.$accent;
 	display: flex;
-	background-color: theme.$primary-300;
+    background-color: theme.$primary-400;
 	height: fit-content;
 	padding: .4rem 2rem;
 	font-size: 1.2rem;
 	border-radius: 10rem;
-    border: 1px solid theme.$accent;;
+    border: none;
 	text-align: center;
 	justify-content: center;
-	width: fit-content
+	width: fit-content;
+	color: theme.$accent
+
 }
 .pill:hover {
-    background-color: theme.$accent;
+	background-color: theme.$primary-300;
     outline: none;
-	color: theme.$primary-400;
     transition: .25s;
+	color: theme.$accent;
+
 }

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 import ButtonPrimary from "../components/ButtonPrimary/ButtonPrimary";
@@ -16,6 +16,7 @@ import awsCertificate from "../assets/pdfs/AWSCertification.pdf";
 import "../styles/components/AboutMe.scss";
 import "../styles/components/Experience.scss";
 import "../styles/pages/homepage.scss";
+
 const experiences = [
 	{
 		title: "Languages/Frameworks",
@@ -51,37 +52,54 @@ const experiences = [
 ];
 
 const Homepage = () => {
-	const [softwareEngineeringExpCurrent, setSoftwareEngineeringExpCurrent] = useState(0);
-	const [professionalExpCurrent, setProfessionalExpCurrent] = useState(0);
-	const [ref, inView] = useInView();
-	const professionalExpEnd = 8;
-	const softwareEngineeringExpEnd = 2;
+	const [activeNav, setActiveNav] = useState("about");
 
-	useEffect(() => {
-		let intervalIdSE;
-		let intervalIdPE;
-		const incrementExperienceAmounts = () => {
-			intervalIdSE = setInterval(() => {
-				setSoftwareEngineeringExpCurrent((softwareEngineeringExpCurrent) =>
-					softwareEngineeringExpCurrent < softwareEngineeringExpEnd
-						? (+softwareEngineeringExpCurrent + 0.1).toFixed(1)
-						: +softwareEngineeringExpEnd.toFixed(1)
-				);
-			}, 50);
-			intervalIdPE = setInterval(() => {
-				setProfessionalExpCurrent((professionalExpCurrent) =>
-					professionalExpCurrent < professionalExpEnd
-						? (+professionalExpCurrent + 0.1).toFixed(1)
-						: +professionalExpEnd.toFixed(1)
-				);
-			}, 25);
-		};
-		if (inView) incrementExperienceAmounts();
-		return () => {
-			clearInterval(intervalIdSE);
-			clearInterval(intervalIdPE);
-		};
-	}, [inView]);
+	const scrollRef = useRef();
+
+	const handleScroll = (e) => {
+		const experienceSectionOffset = document.getElementById("experience").offsetTop - 160;
+		const portfolioSectionOffset = document.getElementById("portfolio").offsetTop - 160;
+		const currentOffsetTop = scrollRef.current.scrollTop;
+
+		if (currentOffsetTop < experienceSectionOffset) setActiveNav("about");
+		else if (currentOffsetTop >= experienceSectionOffset && currentOffsetTop < portfolioSectionOffset)
+			setActiveNav("experience");
+		else setActiveNav("portfolio");
+	};
+
+	//#region - REFERENCE : used for experience incrementing animation on scroll..
+	// const [softwareEngineeringExpCurrent, setSoftwareEngineeringExpCurrent] = useState(0);
+	// const [professionalExpCurrent, setProfessionalExpCurrent] = useState(0);
+	// const [ref, inView] = useInView();
+	// const professionalExpEnd = 8;
+	// const softwareEngineeringExpEnd = 2;
+
+	// useEffect(() => {
+	// 	let intervalIdSE;
+	// 	let intervalIdPE;
+	// 	const incrementExperienceAmounts = () => {
+	// 		intervalIdSE = setInterval(() => {
+	// 			setSoftwareEngineeringExpCurrent((softwareEngineeringExpCurrent) =>
+	// 				softwareEngineeringExpCurrent < softwareEngineeringExpEnd
+	// 					? (+softwareEngineeringExpCurrent + 0.1).toFixed(1)
+	// 					: +softwareEngineeringExpEnd.toFixed(1)
+	// 			);
+	// 		}, 50);
+	// 		intervalIdPE = setInterval(() => {
+	// 			setProfessionalExpCurrent((professionalExpCurrent) =>
+	// 				professionalExpCurrent < professionalExpEnd
+	// 					? (+professionalExpCurrent + 0.1).toFixed(1)
+	// 					: +professionalExpEnd.toFixed(1)
+	// 			);
+	// 		}, 25);
+	// 	};
+	// 	if (inView) incrementExperienceAmounts();
+	// 	return () => {
+	// 		clearInterval(intervalIdSE);
+	// 		clearInterval(intervalIdPE);
+	// 	};
+	// }, [inView]);
+	//#endregion
 
 	const experienceCardComponents = experiences.map((experience, idx) => (
 		<ExperienceCard key={idx} title={experience.title} contents={experience.contents} images={experience.images} />
@@ -91,7 +109,7 @@ const Homepage = () => {
 			{/* About Me Section */}
 
 			<div className=' left'>
-				<div className="AboutMe-container">
+				<div className='intro-container'>
 					<div className='header-div'>
 						<h1 className='header-content'> Cameron Thomas</h1>
 						<p className='subheader-content'>Full Stack Engineer</p>
@@ -99,6 +117,17 @@ const Homepage = () => {
 					<p className='section-content'>I build intuitive, user-focused applications.</p>
 					<div className='button-container'>
 						<ButtonPrimary content={"Download Resume"} url={resumeURL}></ButtonPrimary>
+					</div>
+					<div className='nav'>
+						<a href='#about' className={`nav-link ${activeNav === "about" ? "active" : ""}`}>
+							<span className='nav-indicator'></span>ABOUT
+						</a>
+						<a href='#experience' className={`nav-link ${activeNav === "experience" ? "active" : ""}`}>
+							<span className='nav-indicator'></span>EXPERIENCE
+						</a>
+						<a href='#portfolio' className={`nav-link ${activeNav === "portfolio" ? "active" : ""}`}>
+							<span className='nav-indicator'></span>PORTFOLIO
+						</a>
 					</div>
 				</div>
 
@@ -119,11 +148,11 @@ const Homepage = () => {
 					</a>
 				</div>
 			</div>
-			<div className='right'>
-				<div className='AboutMe-container'>
+			<div className='right' ref={scrollRef} onScroll={handleScroll}>
+				<div id='about' className='AboutMe-container'>
 					<div className='descriptions'>
 						<div>
-							<h3 className='subheader-content'>About</h3>
+							<h3 className='subheader-content'>ABOUT</h3>
 							<div className='underline'></div>
 						</div>
 						<p className='section-content'>
@@ -156,10 +185,10 @@ const Homepage = () => {
 
 				{/* Experience Section */}
 
-				<div className='experience-container'>
+				<div id='experience' className='experience-container'>
 					<div className='container'>
 						<div>
-							<h1 className='subheader-content'> Experience</h1>
+							<h1 className='subheader-content'> EXPERIENCE</h1>
 							<div className='underline'></div>
 						</div>
 
@@ -176,11 +205,39 @@ const Homepage = () => {
 							skills={["Javascript", "Vue.js", "Netsuite", "SuiteQL"]}
 						/>
 					</div>
+					{/* Certifications */}
+					<div className='certifications'>
+						<div>
+							<h2 className='subheader-content'>Certifications</h2>
+						</div>
+
+						<ButtonPrimary content={"Software Engineering Certification"} url={seCertificate}></ButtonPrimary>
+						<ButtonPrimary content={"AWS Cloud Practitioner Certification"} url={awsCertificate}></ButtonPrimary>
+					</div>
+
+					<div className='subsection center'>
+						{/* <div ref={ref} className='experience-stats-container'>
+					<div className='stat'>
+						<p className='content'>+{softwareEngineeringExpCurrent}</p>
+						<p className='description'>Years of SE Experience</p>
+					</div>
+					<div className='stat'>
+						<p className='content'>+{professionalExpCurrent}</p>
+						<p className='description'>Years of Professional Experience</p>
+					</div>
+				</div> */}
+					</div>
+
+					<div className=''>
+						<div className=''>
+							<div className='experiences'>{experienceCardComponents}</div>
+						</div>
+					</div>
 
 					{/* Projects */}
-					<div className='container'>
+					<div id='portfolio' className='container'>
 						<div>
-							<h1 className='subheader-content'>Portfolio</h1>
+							<h1 className='subheader-content'>PORTFOLIO</h1>
 							<div className='underline'></div>
 						</div>
 						<div className='projects'>
@@ -245,35 +302,6 @@ const Homepage = () => {
 					status={"Complete"}
 					skills={['Python', 'SqlAlchemy', 'PostgreSQL', 'Flask', 'Jinja']}
 					github={'packlist'}></ProjectCard> */}
-						</div>
-					</div>
-
-					{/* Certifications */}
-					<div className='button-container'>
-						<div>
-							<h2 className='subheader-content'>Certifications</h2>
-						</div>
-
-						<ButtonPrimary content={"Software Engineering Certification"} url={seCertificate}></ButtonPrimary>
-						<ButtonPrimary content={"AWS Cloud Practitioner Certification"} url={awsCertificate}></ButtonPrimary>
-					</div>
-
-					<div className='subsection center'>
-						{/* <div ref={ref} className='experience-stats-container'>
-					<div className='stat'>
-						<p className='content'>+{softwareEngineeringExpCurrent}</p>
-						<p className='description'>Years of SE Experience</p>
-					</div>
-					<div className='stat'>
-						<p className='content'>+{professionalExpCurrent}</p>
-						<p className='description'>Years of Professional Experience</p>
-					</div>
-				</div> */}
-					</div>
-
-					<div className=''>
-						<div className=''>
-							<div className='experiences'>{experienceCardComponents}</div>
 						</div>
 					</div>
 				</div>

@@ -2,7 +2,7 @@
 
 .project-card-container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	width: 100%;
 	height: fit-content;
 	font-size: 1.4rem;
@@ -13,6 +13,12 @@
 	.flex-container {
 		display: flex;
 		column-gap: 1.2rem;
+		
+		&.column{
+			flex-direction: column;
+			row-gap: 1.2rem;
+			justify-content: start;
+		}
 	}
 
 	.flex-content {
@@ -31,8 +37,6 @@
 
 	.project-title {
 		color: theme.$accent;
-		text-decoration: underline;
-		text-underline-offset: .4rem;
 		font-size: 1.6rem;
 	}
 	.status {
@@ -72,3 +76,13 @@
 	.link {
 	}
 }
+
+@media (min-width: theme.$breakpoint-tablet-portrait) {
+	.project-card-container {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		column-gap: 2rem;
+	}
+}
+
+
