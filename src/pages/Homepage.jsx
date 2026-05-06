@@ -283,7 +283,7 @@ const Homepage = () => {
 								skills={["NodeJS", "Express", "React", "Javascript", "Penpot", "Docker", "Nginx"]}
 								github={"frameworks-dev"}></ProjectCard>
 							<ProjectCard
-								link={"#"}
+								link={"https://fitly-frontend.onrender.com/"}
 								name={"Fitly"}
 								type={"Web App"}
 								imageSrc={"/Portfolio/ProjectImages/fitly.png"}
